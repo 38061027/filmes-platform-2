@@ -1,1 +1,40 @@
-<p>home works!</p>
+<main class="container">
+    <header class="container-header">
+        <div class="header-items">
+            <i class="material-symbols-outlined">menu</i>
+            <h1>Meus Filmes</h1>
+            <i class="material-symbols-outlined">settings</i>
+        </div>
+    </header>
+
+    <div class="filter">
+        <mat-form-field>
+            <mat-label>Input</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+
+    <div class="movies" >
+        <div class="movie" *ngFor="let movie of movies">
+            <div class="title-genre">
+                <h3>{{movie.titulo}}</h3>
+                <p>{{movie.genero}}</p>
+            </div>
+            <div class="img">
+                <img [src]="movie.urlFoto" [title]="movie.urlFoto">
+                <p>{{movie.descricao}}</p>
+                <button mat-flat-button color="primary">Abrir</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+

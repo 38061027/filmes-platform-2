@@ -8,15 +8,15 @@
     </header>
 
     <div class="filter">
-        <mat-form-field>
+        <mat-form-field style="width: 400px;">
             <mat-label>Input</mat-label>
             <input matInput>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field style="width: 400px;" >
             <mat-label>Select</mat-label>
             <mat-select>
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
+              <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
+    
             </mat-select>
           </mat-form-field>
     </div>
@@ -25,13 +25,13 @@
     <div class="movies" >
         <div class="movie" *ngFor="let movie of movies">
             <div class="title-genre">
-                <h3>{{movie.titulo}}</h3>
+                <h2>{{movie.titulo}}</h2>
                 <p>{{movie.genero}}</p>
             </div>
-            <div class="img">
-                <img [src]="movie.urlFoto" [title]="movie.urlFoto">
+            <div class="info">
+                <img class="img" [src]="movie.urlFoto" [title]="movie.urlFoto">
                 <p>{{movie.descricao}}</p>
-                <button mat-flat-button color="primary">Abrir</button>
+                <button class="btn-open" mat-flat-button color="primary">Abrir</button>
             </div>
         </div>
     </div>

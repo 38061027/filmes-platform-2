@@ -44,9 +44,29 @@
 
 
 .movie{
-    border: 1px solid red;
+    border: 1px solid gray;
     width: 350px;
-    height: 625px;
     margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+}
+
+.title-genre{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info .img{
+   width: 100%;
+   
+}
+
+input{
+    width: 200px;
 }

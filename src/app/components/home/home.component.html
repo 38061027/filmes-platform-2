@@ -8,22 +8,23 @@
     </header>
 
     <div class="filter">
+        <form [formGroup]="filtrosListagem">
         <mat-form-field style="width: 400px;">
             <mat-label>Input</mat-label>
-            <input matInput>
+            <input matInput formControlName="texto">
           </mat-form-field>
           <mat-form-field style="width: 400px;" >
             <mat-label>Select</mat-label>
-            <mat-select>
+            <mat-select formControlName="genero">
               <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
-    
             </mat-select>
           </mat-form-field>
+          ]</form>
     </div>
 
 
-    <div class="movies" >
-        <div class="movie" *ngFor="let movie of movies">
+    <div class="movies" *ngIf="movies; else semRegistro">
+        <div class="movie" *ngFor="let movie of movies" >
             <div class="title-genre">
                 <h2>{{movie.titulo}}</h2>
                 <p>{{movie.genero}}</p>
@@ -35,6 +36,10 @@
             </div>
         </div>
     </div>
+
+    <ng-template #semRegistro>
+        <h1 >Nenhum registro encontrado</h1>
+        </ng-template>
 
 </main>
 

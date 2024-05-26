@@ -15,4 +15,6 @@ export class SharedService {
   getMovie():Observable<any[]>{
     return this.http.get<any[]>(this.url)
   }
+
+
 }

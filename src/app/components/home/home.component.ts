@@ -45,15 +45,14 @@ export class HomeComponent implements OnInit {
   filterMovie() {
     this.filtrosListagem.valueChanges.subscribe(values => {
       this.service.getMovie().subscribe(res => {
-        if(values.texto !== ''){
+        if (values.texto !== '') {
           this.movies = res.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()))
         }
-        if(values.genero !== ''){
-
+        if (values.genero !== '') {
           this.movies = res.filter(movie => movie.genero === values.genero);
         }
       });
-      console.log(values)
+
     });
   }
 

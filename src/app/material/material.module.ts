@@ -4,12 +4,23 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';;
+
+
 
 const MODULES = [
   MatSelectModule,
   MatInputModule,
   MatFormFieldModule,
-  MatButtonModule
+  MatButtonModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatDatepickerModule,
+  MatCardModule,
+  MatNativeDateModule
 ]
 
 @NgModule({
@@ -18,6 +29,7 @@ const MODULES = [
     CommonModule,
     MODULES
   ],
-  exports:[MODULES]
+  exports:[MODULES],
+
 })
 export class MaterialModule { }

@@ -1,7 +1,12 @@
 <main class="container">
     <header class="container-header">
         <div class="header-items">
-            <i class="material-symbols-outlined">menu</i>
+            <span mat-button [matMenuTriggerFor]="menu" id="menu-btn" class="material-symbols-outlined"
+                >menu</span>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="cadastro">Cadastrar Filme</button>
+                <button mat-menu-item routerLink="">Home</button>
+            </mat-menu>
             <h1>Meus Filmes</h1>
             <i class="material-symbols-outlined">settings</i>
         </div>
@@ -9,22 +14,22 @@
 
     <div class="filter">
         <form [formGroup]="filtrosListagem">
-        <mat-form-field style="width: 400px;">
-            <mat-label>Input</mat-label>
-            <input matInput formControlName="texto">
-          </mat-form-field>
-          <mat-form-field style="width: 400px;" >
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="genero">
-              <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          ]</form>
+            <mat-form-field style="width: 400px;">
+                <mat-label>Pesquisar</mat-label>
+                <input matInput formControlName="texto">
+            </mat-form-field>
+            <mat-form-field style="width: 400px;">
+                <mat-label>gênero</mat-label>
+                <mat-select formControlName="genero">
+                    <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
     </div>
 
 
     <div class="movies" *ngIf="movies; else semRegistro">
-        <div class="movie" *ngFor="let movie of movies" >
+        <div class="movie" *ngFor="let movie of movies">
             <div class="title-genre">
                 <h2>{{movie.titulo}}</h2>
                 <p>{{movie.genero}}</p>
@@ -38,8 +43,7 @@
     </div>
 
     <ng-template #semRegistro>
-        <h1 >Nenhum registro encontrado</h1>
-        </ng-template>
+        <h1>Nenhum registro encontrado</h1>
+    </ng-template>
 
 </main>
-

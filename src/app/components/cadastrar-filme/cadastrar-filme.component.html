@@ -1,1 +1,42 @@
-<p>cadastrar-filme works!</p>
+<div class="container-form">
+    
+    <div class="container-form">
+        <mat-card class="container-card">
+          <mat-card-content class="card">
+            <form class="content" [formGroup]="cadastro" (ngSubmit)="onSubmit()">
+              <mat-form-field>
+                <mat-label>Titulo</mat-label>
+                <input matInput formControlName="titulo">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Data de Lançamento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dtLancamento">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Gênero</mat-label>
+                <mat-select formControlName="genero">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Link IMDb</mat-label>
+                <input matInput formControlName="urlIMDb">
+              </mat-form-field>
+              <mat-form-field class="example-ripple-form-field">
+                <mat-label>Radius</mat-label>
+                <input matInput formControlName="nota" type="number">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Descrição</mat-label>
+                <textarea matInput formControlName="descricao"></textarea>
+              </mat-form-field>
+              <button mat-raised-button color="primary" type="submit" [disabled]="cadastro.invalid">Enviar</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+</div>

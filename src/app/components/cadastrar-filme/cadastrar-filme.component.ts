@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 
@@ -10,10 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CadastrarFilmeComponent implements OnInit{
   radius!: number;
-
+  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama','Fantasia']
   cadastro!:FormGroup
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder,
+    private service: SharedService
+  ){
     this.formulario({
       titulo: '',
       urlFoto: '',
@@ -54,10 +57,14 @@ export class CadastrarFilmeComponent implements OnInit{
 
   onSubmit(): void {
     if (this.cadastro.valid) {
-      console.log('Formulário válido e preenchido:', this.cadastro.value);
-    } else {
-      console.log('Formulário inválido.');
+      this.service.sendMovie(this.cadastro.value).subscribe()
     }
   }
+
+  reiniciarForm(){
+    this.cadastro.reset()
+  }
+
+ 
 
 }

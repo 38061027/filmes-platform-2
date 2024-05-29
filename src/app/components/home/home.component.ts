@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   movies!: any[]
 
-  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama']
+  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama','Fantasia']
 
   filtrosListagem!: FormGroup
 

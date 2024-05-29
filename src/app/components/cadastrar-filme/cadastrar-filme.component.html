@@ -9,6 +9,10 @@
                 <input matInput formControlName="titulo">
               </mat-form-field>
               <mat-form-field>
+                <mat-label>Link Da Foto</mat-label>
+                <input matInput formControlName="urlFoto">
+              </mat-form-field>
+              <mat-form-field>
                 <mat-label>Data de Lançamento</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="dtLancamento">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -17,8 +21,7 @@
               <mat-form-field>
                 <mat-label>Gênero</mat-label>
                 <mat-select formControlName="genero">
-                  <mat-option value="one">First option</mat-option>
-                  <mat-option value="two">Second option</mat-option>
+                  <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
                 </mat-select>
               </mat-form-field>
               <mat-form-field>

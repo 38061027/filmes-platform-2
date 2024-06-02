@@ -37,7 +37,7 @@
             <div class="info">
                 <img class="img" [src]="movie.urlFoto" [title]="movie.urlFoto">
                 <p>{{movie.descricao}}</p>
-                <button class="btn-open" mat-flat-button color="primary">Abrir</button>
+                <button class="btn-open" mat-flat-button color="primary" [routerLink]="['movie',movie.id]">Abrir</button>
             </div>
         </div>
     </div>

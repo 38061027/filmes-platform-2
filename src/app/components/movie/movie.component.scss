@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid gray;
+}
+.img{
+    width: 35%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+.img img{
+    width: 50%;
+    
+}
+
+.content-info{
+    width: 65%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+
+.nota{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.nota p{
+color: yellow;
+}

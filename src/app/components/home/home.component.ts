@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 
 
@@ -10,6 +11,8 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class HomeComponent implements OnInit {
 
+  
+
   movies!: any[]
 
   generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama','Fantasia']
@@ -17,13 +20,15 @@ export class HomeComponent implements OnInit {
   filtrosListagem!: FormGroup
 
   constructor(private service: SharedService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private route: ActivatedRoute
   ) {
 
     this.filtrosListagem = this.fb.group({
       texto: [''],
       genero: ['']
     })
+
   }
 
 

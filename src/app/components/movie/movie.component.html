@@ -1,0 +1,22 @@
+<div class="container" *ngIf="movie">
+
+    <div class="content">
+        <div class="img">
+            <img [src]="movie.urlFoto" alt="">
+        </div>
+        <div class="content-info">
+            <div>
+                <h1>{{movie.titulo}}</h1>
+                <h3>{{movie.genero}}</h3>
+            </div>
+            <p>{{movie.descricao}}</p>
+            <i>Data de Lançamento - {{movie.dtLancamento | date:'dd/MM/yyyy' }}</i>
+            <div class="nota">
+                    <h2>AVALIAÇÃO DA IMDb</h2>
+                    <h2>{{movie.nota}}</h2>
+                    <p class="material-symbols-outlined">star</p>
+            </div>
+        </div>
+    </div>
+ 
+</div>

@@ -9,12 +9,14 @@ import { CadastrarFilmeComponent } from './components/cadastrar-filme/cadastrar-
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CadastrarFilmeComponent
+    CadastrarFilmeComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

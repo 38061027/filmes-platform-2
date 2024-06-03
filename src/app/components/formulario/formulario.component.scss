@@ -1,0 +1,30 @@
+
+.container-card {
+    padding: 10px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.btn-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-content button{
+    width: 200px;
+}

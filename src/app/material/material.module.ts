@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';;
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const MODULES = [
@@ -20,7 +20,8 @@ const MODULES = [
   MatMenuModule,
   MatDatepickerModule,
   MatCardModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatDialogModule
 ]
 
 @NgModule({

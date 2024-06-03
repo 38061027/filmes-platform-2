@@ -11,11 +11,11 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class HomeComponent implements OnInit {
 
-  
+
 
   movies!: any[]
 
-  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama','Fantasia']
+  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia']
 
   filtrosListagem!: FormGroup
 

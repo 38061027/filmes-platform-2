@@ -11,16 +11,6 @@
       "genero": "Ação"
     },
     {
-      "id": "2",
-      "titulo": "MIB: Homens de Preto II ",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTMxNDA0NTMxMV5BMl5BanBnXkFtZTYwMDE2NzY2._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2012-07-19T03:00:00.000Z",
-      "descricao": "Agent J is sent to find Agent K and restore his memory after the re-appearance of a case from K's past.",
-      "nota": 6.2,
-      "urlIMDb": "https://www.imdb.com/title/tt0120912",
-      "genero": "Ação"
-    },
-    {
       "id": "3",
       "titulo": "MIB: Homens de Preto III",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTU2NTYxODcwMF5BMl5BanBnXkFtZTcwNDk1NDY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -61,16 +51,6 @@
       "genero": "Ação"
     },
     {
-      "id": "8",
-      "titulo": "Shazam!",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-04-04T03:00:00.000Z",
-      "descricao": "A newly fostered young boy in search of his mother instead finds unexpected super powers and soon gains a powerful enemy.",
-      "nota": 7.1,
-      "urlIMDb": "https://www.imdb.com/title/tt0448115/",
-      "genero": "Comédia"
-    },
-    {
       "id": "9",
       "titulo": "John Wick 3: Parabellum",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -101,16 +81,6 @@
       "id": "11"
     },
     {
-      "id": "12",
-      "titulo": "Star Wars: Episódio IV - Uma Nova Esperança",
-      "urlFoto": "https://www.estudarfora.org.br/wp-content/uploads/2018/05/cursos-sobre-Star-Wars-1.jpg",
-      "dtLancamento": "1977-06-09T03:00:00.000Z",
-      "descricao": "Luke Skywalker une forças com um cavaleiro Jedi, um piloto arrogante, um Wookiee e dois andróides para salvar a galáxia da estação de batalha destruidora do Império, enquanto tenta resgatar a Princesa Leia do misterioso Darth Vader.",
-      "nota": 8.6,
-      "urlIMDb": "https://www.imdb.com/title/tt0076759/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_star%2520wars%2520uma",
-      "genero": "Ação"
-    },
-    {
       "id": "13",
       "titulo": "Gente Grande",
       "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
@@ -139,6 +109,26 @@
       "nota": 6.1,
       "urlIMDb": "https://www.imdb.com/title/tt13452446/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_dam",
       "genero": "Aventura"
+    },
+    {
+      "titulo": "Godzilla e Kong: O Novo Império",
+      "urlFoto": "https://br.web.img3.acsta.net/pictures/24/02/28/15/47/0426941.png",
+      "dtLancamento": "2024-06-19T03:00:00.000Z",
+      "descricao": "Godzilla e Kong enfrentam um monstro aterrorizante que ameaça todo o planeta.",
+      "nota": 6.2,
+      "urlIMDb": "https://www.imdb.com/title/tt14539740/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_godzi",
+      "genero": "Ficção cientifica",
+      "id": "16"
+    },
+    {
+      "titulo": "Harry Potter e a Pedra Filosofal",
+      "urlFoto": "https://musicart.xboxlive.com/7/93e05000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
+      "dtLancamento": "2001-06-07T03:00:00.000Z",
+      "descricao": "Harry Potter é um garoto que, após a misteriosa morte dos pais, mora com os tios. Harry leva uma vida de privações, mas sua história muda de rumo quando completa 11 anos e descobre ser um bruxo, ingressando na escola de magia de Hogwarts.",
+      "nota": 7.8,
+      "urlIMDb": "https://www.imdb.com/title/tt0241527/?ref_=nv_sr_srsg_4_tt_3_nm_4_q_harry",
+      "genero": "Ficção cientifica",
+      "id": "17"
     }
   ]
 }

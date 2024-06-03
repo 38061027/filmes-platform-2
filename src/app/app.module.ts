@@ -10,13 +10,15 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CadastrarFilmeComponent,
-    MovieComponent
+    MovieComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

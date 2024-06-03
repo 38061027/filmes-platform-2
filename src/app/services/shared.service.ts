@@ -33,4 +33,12 @@ export class SharedService {
   }
 
 
+    editMovie(movie:any, id:string | undefined):Observable<any>{
+      return this.http.put<any>(`${this.url}/${id}`, movie)
+    }
+  
+    removeMovie(id:string){
+      return this.http.delete(`${this.url}/${id}`)
+    }
+
 }

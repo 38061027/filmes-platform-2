@@ -1,5 +1,9 @@
 <div class="container" *ngIf="movie">
 
+    <span class="material-symbols-outlined" id="back" routerLink="">
+        arrow_back
+        </span>
+
     <div class="content">
         <div class="img">
             <img [src]="movie.urlFoto" alt="">
@@ -17,6 +21,11 @@
                     <p class="material-symbols-outlined">star</p>
             </div>
         </div>
+    </div>
+
+    <div class="btn-content-movie">
+        <button mat-raised-button color="primary" id="edit" (click)="openDialog()">Editar</button>
+        <button mat-raised-button color="warn" id="remove" (click)="removeMovie(movie.id)">Remover</button>
     </div>
  
 </div>

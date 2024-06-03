@@ -1,8 +1,10 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
 .content{
@@ -41,4 +43,30 @@
 }
 .nota p{
 color: yellow;
+}
+
+#back{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: xx-large;
+    font-weight: bolder;
+    border-radius: 50%;
+    border: 1px solid blue;
+    padding: 10px;
+    cursor: pointer;
+}
+#back:hover{
+transform: scale(1.2);
+}
+
+.btn-content-movie{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+
+}
+.btn-content-movie button{
+    width: 200px;
+
 }

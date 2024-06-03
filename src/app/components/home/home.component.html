@@ -1,8 +1,7 @@
 <main class="container">
     <header class="container-header">
         <div class="header-items">
-            <span mat-button [matMenuTriggerFor]="menu" id="menu-btn" class="material-symbols-outlined"
-                >menu</span>
+            <span mat-button [matMenuTriggerFor]="menu" id="menu-btn" class="material-symbols-outlined">menu</span>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item routerLink="cadastro">Cadastrar Filme</button>
                 <button mat-menu-item routerLink="">Home</button>
@@ -37,7 +36,8 @@
             <div class="info">
                 <img class="img" [src]="movie.urlFoto" [title]="movie.urlFoto">
                 <p>{{movie.descricao}}</p>
-                <button class="btn-open" mat-flat-button color="primary" [routerLink]="['movie',movie.id]">Abrir</button>
+                <button class="btn-open" mat-flat-button color="primary"
+                    [routerLink]="['movie',movie.id]">Abrir</button>
             </div>
         </div>
     </div>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
+
+import { FormularioComponent } from '../formulario/formulario.component';
 
 @Component({
   selector: 'app-movie',
@@ -8,13 +11,17 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit{
+  animal!: string;
+  name!: string;
 
   id!:string | null
 
   movie:any
 
   constructor(private route: ActivatedRoute,
-    private service:SharedService
+    private router: Router,
+    private service:SharedService,
+    public dialog: MatDialog
   ){
 
     const idMovie = this.route.snapshot.paramMap.get('id');
@@ -32,6 +39,26 @@ export class MovieComponent implements OnInit{
         })
       
 
+    })
+    
+  }
+
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FormularioComponent, {
+      data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+
+  removeMovie(id:string){
+    this.service.removeMovie(id).subscribe(()=>{
+      this.router.navigateByUrl('')
     })
   }
   

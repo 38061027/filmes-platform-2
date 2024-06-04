@@ -12,12 +12,12 @@
     </header>
 
     <div class="filter">
-        <form [formGroup]="filtrosListagem">
-            <mat-form-field style="width: 400px;">
+        <form [formGroup]="filtrosListagem" class="form-content">
+            <mat-form-field style="width: 450px;">
                 <mat-label>Pesquisar</mat-label>
                 <input matInput formControlName="texto">
             </mat-form-field>
-            <mat-form-field style="width: 400px;">
+            <mat-form-field style="width: 450px;">
                 <mat-label>gênero</mat-label>
                 <mat-select formControlName="genero">
                     <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
@@ -28,13 +28,13 @@
 
 
     <div class="movies" *ngIf="movies; else semRegistro">
-        <div class="movie" *ngFor="let movie of movies">
+        <div class="movie" *ngFor="let movie of movies" [title]="movie.titulo">
             <div class="title-genre">
                 <h2>{{movie.titulo}}</h2>
                 <p>{{movie.genero}}</p>
             </div>
             <div class="info">
-                <img class="img" [src]="movie.urlFoto" [title]="movie.urlFoto">
+                <img class="img" [src]="movie.urlFoto" >
                 <p>{{movie.descricao}}</p>
                 <button class="btn-open" mat-flat-button color="primary"
                     [routerLink]="['movie',movie.id]">Abrir</button>

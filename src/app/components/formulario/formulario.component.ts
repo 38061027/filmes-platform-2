@@ -13,8 +13,8 @@ export class FormularioComponent {
   radius!: number;
   generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama','Fantasia']
   cadastro!:FormGroup
-
   id!:string | undefined
+  spinner:boolean = false
 
   @Input() metodo: 'POST' | 'PUT' = 'POST';
 
@@ -94,8 +94,11 @@ this.service.getMovie().subscribe(res=>{
   onSubmit(): void {
     if (this.cadastro.valid) {
       if (this.id && this.id !== 'undefined') {
+        this.spinner = true
+        setTimeout(()=>this.spinner = false,1200)
         this.service.editMovie(this.cadastro.value, this.id).subscribe();
       } else {
+        this.router.navigateByUrl('')
         this.service.sendMovie(this.cadastro.value).subscribe();
       }
     }

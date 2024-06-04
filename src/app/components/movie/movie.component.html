@@ -27,5 +27,7 @@
         <button mat-raised-button color="primary" id="edit" (click)="openDialog()">Editar</button>
         <button mat-raised-button color="warn" id="remove" (click)="removeMovie(movie.id)">Remover</button>
     </div>
+
+    <mat-spinner class="spinner" *ngIf="spinner" [color]="'warn'"></mat-spinner>
  
 </div>

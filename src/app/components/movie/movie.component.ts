@@ -4,25 +4,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 
 import { FormularioComponent } from '../formulario/formulario.component';
+import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class MovieComponent implements OnInit{
-  animal!: string;
-  name!: string;
+export class MovieComponent implements OnInit {
 
-  id!:string | null
-
-  movie:any
+  id!: string | null
+  spinner:boolean = false
+  movie: any
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private service:SharedService,
+    private service: SharedService,
     public dialog: MatDialog
-  ){
+  ) {
 
     const idMovie = this.route.snapshot.paramMap.get('id');
     this.id = idMovie
@@ -30,36 +29,38 @@ export class MovieComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.service.getMovie().subscribe((res:any)=>{
+    this.service.getMovie().subscribe((res: any) => {
 
-        res.forEach((el:any) => {
-          if(el.id == this.id){
-            this.movie = el
-          }
-        })
-      
+      res.forEach((el: any) => {
+        if (el.id == this.id) {
+          this.movie = el
+        }
+      })
+
 
     })
-    
+
   }
 
 
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(FormularioComponent, {
-      data: {name: this.name, animal: this.animal},
-    });
+    const dialogRef = this.dialog.open(FormularioComponent)
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+    dialogRef.afterClosed().subscribe(() => {
+      this.service.getMovie().pipe(
+        map((movies: any[]) => movies.find(movie => movie.id === this.id)) 
+      ).subscribe(res => this.movie = res);
     });
   }
 
-  removeMovie(id:string){
-    this.service.removeMovie(id).subscribe(()=>{
+  removeMovie(id: string) {
+    this.service.removeMovie(id).subscribe(() => {
+      this.spinner = true
+      setTimeout(()=>
       this.router.navigateByUrl('')
+      ,1200)
     })
   }
-  
+
 }

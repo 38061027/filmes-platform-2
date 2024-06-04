@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SharedService } from 'src/app/services/shared.service';
-
+import { Component } from '@angular/core';
 
 
 @Component({

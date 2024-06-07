@@ -7,7 +7,9 @@
                 <button mat-menu-item routerLink="">Home</button>
             </mat-menu>
             <h1>Meus Filmes</h1>
-            <i class="material-symbols-outlined">settings</i>
+
+            <i class="material-symbols-outlined" id="favorite">favorite</i>
+
         </div>
     </header>
 
@@ -34,10 +36,10 @@
                 <p>{{movie.genero}}</p>
             </div>
             <div class="info">
-                <img class="img" [src]="movie.urlFoto" >
+                <img class="img" [src]="movie.urlFoto">
                 <p>{{movie.descricao}}</p>
-                <button class="btn-open" mat-flat-button color="primary"
-                    [routerLink]="['movie',movie.id]">Abrir</button>
+                <button class="btn-open" mat-flat-button color="accent" [routerLink]="['movie',movie.id]">Abrir</button>
+                <button  id="btn-favorite" class="material-symbols-outlined" title="Adicionar aos favoritos">favorite</button>
             </div>
         </div>
     </div>

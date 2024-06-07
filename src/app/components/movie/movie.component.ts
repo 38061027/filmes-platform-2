@@ -14,7 +14,7 @@ import { filter, map } from 'rxjs';
 export class MovieComponent implements OnInit {
 
   id!: string | null
-  spinner:boolean = false
+  spinner: boolean = false
   movie: any
 
   constructor(private route: ActivatedRoute,
@@ -30,18 +30,14 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getMovie().subscribe((res: any) => {
-
       res.forEach((el: any) => {
         if (el.id == this.id) {
           this.movie = el
         }
       })
-
-
     })
 
   }
-
 
 
   openDialog(): void {
@@ -49,18 +45,21 @@ export class MovieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.service.getMovie().pipe(
-        map((movies: any[]) => movies.find(movie => movie.id === this.id)) 
+        map((movies: any[]) => movies.find(movie => movie.id === this.id))
       ).subscribe(res => this.movie = res);
     });
   }
 
   removeMovie(id: string) {
+    let confirm = window.confirm("Você tem certeza que deseja excluir?")
+  if(confirm){
     this.service.removeMovie(id).subscribe(() => {
       this.spinner = true
-      setTimeout(()=>
-      this.router.navigateByUrl('')
-      ,1200)
+      setTimeout(() =>
+        this.router.navigateByUrl('')
+        , 1200)
     })
+  }
   }
 
 }

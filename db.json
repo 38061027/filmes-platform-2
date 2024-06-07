@@ -11,14 +11,14 @@
       "genero": "Ação"
     },
     {
-      "id": "4",
       "titulo": "MIB: Homens de Preto - Internacional",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-13-11T03:00:00.000Z",
+      "dtLancamento": "2024-06-18T03:00:00.000Z",
       "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
       "nota": 5.6,
       "urlIMDb": "https://www.imdb.com/title/tt2283336/",
-      "genero": "Ação"
+      "genero": "Ação",
+      "id": "4"
     },
     {
       "titulo": "Vingadores: Ultimato",
@@ -99,16 +99,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt13452446/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_dam",
       "genero": "Aventura",
       "id": "15"
-    },
-    {
-      "titulo": "Venom: A Última Rodada",
-      "urlFoto": "https://people.com/thmb/onuqUuEBpDwJE0yuwP4pM4yIXsg=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(505x0:507x2)/Venom-The-Last-Dance-Poster-050324-2fd2211521db471a969d760284a1d39c.jpg",
-      "dtLancamento": "2024-03-13T03:00:00.000Z",
-      "descricao": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
-      "nota": 6,
-      "urlIMDb": "https://www.imdb.com/title/tt16366836/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_veno",
-      "genero": "Ficção cientifica",
-      "id": "18"
     }
   ]
 }

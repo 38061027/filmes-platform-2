@@ -8,7 +8,7 @@
             </mat-menu>
             <h1>Meus Filmes</h1>
 
-            <i class="material-symbols-outlined" id="favorite">favorite</i>
+            <i class="material-symbols-outlined" id="favorite" routerLink="favorites">favorite <p class="counter">{{counter}}</p></i>
 
         </div>
     </header>
@@ -39,7 +39,7 @@
                 <img class="img" [src]="movie.urlFoto">
                 <p>{{movie.descricao}}</p>
                 <button class="btn-open" mat-flat-button color="accent" [routerLink]="['movie',movie.id]">Abrir</button>
-                <button  id="btn-favorite" class="material-symbols-outlined" title="Adicionar aos favoritos">favorite</button>
+                <button  id="btn-favorite" class="material-symbols-outlined" #btnFavorite title="Adicionar aos favoritos" (click)="sendFavorites(movie)" [attr.data-id]="movie.id">favorite</button>
             </div>
         </div>
     </div>

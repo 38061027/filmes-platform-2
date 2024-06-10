@@ -103,6 +103,17 @@
 
 #favorite {
     color: red;
+    position: relative;
+
+    }
+
+    .counter{
+        position: absolute;
+        font-size: medium;
+        font-weight: bolder;
+        top: -15px;
+        left: -10px;
+        color: white;
     }
     
     #btn-favorite {
@@ -114,5 +125,5 @@
         border: transparent;
         color: white;
         font-size: xx-large;
-
+        cursor: pointer;
 }

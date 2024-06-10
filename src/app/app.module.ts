@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     HomeComponent,
     CadastrarFilmeComponent,
     MovieComponent,
-    FormularioComponent
+    FormularioComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

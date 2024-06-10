@@ -15,20 +15,10 @@
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLancamento": "2024-06-18T03:00:00.000Z",
       "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
-      "nota": 5.6,
+      "nota": 5.7,
       "urlIMDb": "https://www.imdb.com/title/tt2283336/",
       "genero": "Ação",
       "id": "4"
-    },
-    {
-      "titulo": "Vingadores: Ultimato",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-04-25T03:00:00.000Z",
-      "descricao": "After the devastating events of Vingadores: Guerra Infinita (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-      "nota": 8.8,
-      "urlIMDb": "https://www.imdb.com/title/tt4154796/",
-      "genero": "Ficção cientifica",
-      "id": "6"
     },
     {
       "id": "7",
@@ -99,6 +89,58 @@
       "urlIMDb": "https://www.imdb.com/title/tt13452446/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_dam",
       "genero": "Aventura",
       "id": "15"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "7",
+      "titulo": "Capitã Marvel",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-03-07T03:00:00.000Z",
+      "descricao": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+      "nota": 6.9,
+      "urlIMDb": "https://www.imdb.com/title/tt4154664/",
+      "genero": "Ação"
+    },
+    {
+      "id": "14",
+      "titulo": "A Cinco Passos de Você",
+      "urlFoto": "https://m.media-amazon.com/images/I/81Q11TuUR3L._AC_UF1000,1000_QL80_.jpg",
+      "dtLancamento": "2019-07-26T03:00:00.000Z",
+      "descricao": "Dois adolescentes com fibrose cística se encontram em um hospital e se apaixonam, mesmo que sua doença os obrigue a evitar contato físico.",
+      "nota": 7.2,
+      "urlIMDb": "https://www.imdb.com/title/tt6472976/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_cinco%2520pas",
+      "genero": "Romance"
+    },
+    {
+      "id": "10",
+      "titulo": "Mistério no Mediterrâneo 2",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BNTA2YTI5YjUtZWI4Zi00NWQ5LWFiYmEtOTBmNTUyNDAwNjllXkEyXkFqcGdeQXVyNjIzNzM4NzA@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-06-14T03:00:00.000Z",
+      "descricao": "A New York cop and his wife go on a European vacation to reinvigorate the spark in their marriage, but end up getting framed and on the run for the death of an elderly billionaire.",
+      "nota": 6,
+      "urlIMDb": "https://www.imdb.com/title/tt1618434/",
+      "genero": "Comédia"
+    },
+    {
+      "id": "4",
+      "titulo": "MIB: Homens de Preto - Internacional",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2024-06-18T03:00:00.000Z",
+      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
+      "nota": 5.7,
+      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+      "genero": "Ação"
+    },
+    {
+      "id": "11",
+      "titulo": "Star Wars: A Ascensão Skywalker",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-12-19T03:00:00.000Z",
+      "descricao": "In Theaters Now\nAfter Palpatine mysteriously returns, the Resistance faces the First Order once more in the final chapter of the Skywalker saga.",
+      "nota": 6.9,
+      "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
+      "genero": "Aventura"
     }
   ]
 }

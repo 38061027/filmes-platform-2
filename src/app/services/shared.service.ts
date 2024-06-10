@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class SharedService {
 
-  url:string = 'http://localhost:3000/filmes'
+  urlMovies:string = 'http://localhost:3000/filmes'
+  urlFavorites:string = 'http://localhost:3000/favorites'
 
   lastId: number = 0
 
@@ -22,23 +23,39 @@ export class SharedService {
 
 
   getMovie():Observable<any[]>{
- 
-    return this.http.get<any[]>(this.url)
+
+    return this.http.get<any[]>(this.urlMovies)
   }
 
   sendMovie(movie:any):Observable<any>{
     this.lastId++;
     movie.id = this.lastId.toString();
-    return this.http.post<any>(this.url,movie)
+    return this.http.post<any>(this.urlMovies,movie)
   }
 
 
     editMovie(movie:any, id:string | undefined):Observable<any>{
-      return this.http.put<any>(`${this.url}/${id}`, movie)
+      return this.http.put<any>(`${this.urlMovies}/${id}`, movie)
     }
   
     removeMovie(id:string){
-      return this.http.delete(`${this.url}/${id}`)
+      return this.http.delete(`${this.urlMovies}/${id}`)
+    }
+
+
+
+
+
+    getFavorites():Observable<any[]>{
+      return this.http.get<any[]>(this.urlFavorites)
+    }
+
+    sendFavorite(favorite:any):Observable<any>{
+      return this.http.post<any>(this.urlFavorites,favorite)
+    }
+
+    deleteFavorite(id:string){
+      return this.http.delete(`${this.urlFavorites}/${id}`)
     }
 
 }

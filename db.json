@@ -71,16 +71,6 @@
       "genero": "Comédia"
     },
     {
-      "id": "14",
-      "titulo": "A Cinco Passos de Você",
-      "urlFoto": "https://m.media-amazon.com/images/I/81Q11TuUR3L._AC_UF1000,1000_QL80_.jpg",
-      "dtLancamento": "2019-07-26T03:00:00.000Z",
-      "descricao": "Dois adolescentes com fibrose cística se encontram em um hospital e se apaixonam, mesmo que sua doença os obrigue a evitar contato físico.",
-      "nota": 7.2,
-      "urlIMDb": "https://www.imdb.com/title/tt6472976/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_cinco%2520pas",
-      "genero": "Romance"
-    },
-    {
       "titulo": "Donzela",
       "urlFoto": "https://wp.ufpel.edu.br/empauta/files/2024/03/Foto-2-Divulgacao-Netflix.jpg",
       "dtLancamento": "2024-05-10T03:00:00.000Z",
@@ -103,16 +93,6 @@
       "genero": "Ação"
     },
     {
-      "id": "14",
-      "titulo": "A Cinco Passos de Você",
-      "urlFoto": "https://m.media-amazon.com/images/I/81Q11TuUR3L._AC_UF1000,1000_QL80_.jpg",
-      "dtLancamento": "2019-07-26T03:00:00.000Z",
-      "descricao": "Dois adolescentes com fibrose cística se encontram em um hospital e se apaixonam, mesmo que sua doença os obrigue a evitar contato físico.",
-      "nota": 7.2,
-      "urlIMDb": "https://www.imdb.com/title/tt6472976/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_cinco%2520pas",
-      "genero": "Romance"
-    },
-    {
       "id": "10",
       "titulo": "Mistério no Mediterrâneo 2",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BNTA2YTI5YjUtZWI4Zi00NWQ5LWFiYmEtOTBmNTUyNDAwNjllXkEyXkFqcGdeQXVyNjIzNzM4NzA@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -123,16 +103,6 @@
       "genero": "Comédia"
     },
     {
-      "id": "4",
-      "titulo": "MIB: Homens de Preto - Internacional",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2024-06-18T03:00:00.000Z",
-      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
-      "nota": 5.7,
-      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
-      "genero": "Ação"
-    },
-    {
       "id": "11",
       "titulo": "Star Wars: A Ascensão Skywalker",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -141,6 +111,16 @@
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura"
+    },
+    {
+      "id": "4",
+      "titulo": "MIB: Homens de Preto - Internacional",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2024-06-18T03:00:00.000Z",
+      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
+      "nota": 5.7,
+      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+      "genero": "Ação"
     }
   ]
 }

@@ -1,3 +1,7 @@
-<div class="container-favorite" *ngFor="let favorite of favoritesMovies">
-    <h1>{{favorite.titulo}}</h1>
+<div class="container">
+    <div class="container-favorite" *ngFor="let favorite of favoritesMovies">
+        <h1>{{favorite.titulo}}</h1>
+        <img [src]="favorite.urlFoto" alt="" class="img">
+        <button [routerLink]="['/movie', favorite.id]" class="btn-details" mat-flat-button color="primary">Ver Detalhes</button>
+    </div>
 </div>

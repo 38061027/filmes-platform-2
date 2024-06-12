@@ -54,7 +54,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
+
+  
   updateFavoriteButtonColors() {
+
     this.btnFavorites.forEach((btn: any) => {
       const buttonElement = btn.nativeElement;
       const favoriteId = buttonElement.getAttribute('data-id');
@@ -62,6 +65,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.renderer.setStyle(buttonElement, 'color', 'red');
       } else {
         this.renderer.setStyle(buttonElement, 'color', 'white');
+
       }
     });
   }
@@ -76,6 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
+  
 
   getMovie() {
     this.service.getMovie().subscribe((res: any[]) => {
@@ -88,7 +93,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   filterMovie() {
     this.filtrosListagem.valueChanges.subscribe(values => {
-      console.log(values)
       this.service.getMovie().subscribe(res => {
         if (values.texto !== '') {
           this.movies = res.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()))

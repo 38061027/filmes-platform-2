@@ -21,3 +21,17 @@
     max-height: 70%;
 }
 
+.btn-db{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#btn-broken{
+   font-size: xx-large;
+   color: red;
+   cursor: pointer;
+}

@@ -11,12 +11,21 @@ export class FavoritesComponent implements OnInit{
   favoritesMovies!:any[]
 
 
-  constructor(private service: SharedService){
-    
-  }
+  constructor(private service: SharedService){}
 
 
   ngOnInit(): void {
+    this.getFavorites()
+  }
+
+
+  deleteFavorite(id:string){
+    this.service.deleteFavorite(id).subscribe(()=>{
+      this.getFavorites()
+    })
+  }
+
+  getFavorites(){
     this.service.getFavorites().subscribe(res => this.favoritesMovies = res)
   }
 

@@ -83,14 +83,14 @@
   ],
   "favorites": [
     {
-      "id": "7",
-      "titulo": "Capitã Marvel",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-03-07T03:00:00.000Z",
-      "descricao": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+      "id": "11",
+      "titulo": "Star Wars: A Ascensão Skywalker",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-12-19T03:00:00.000Z",
+      "descricao": "In Theaters Now\nAfter Palpatine mysteriously returns, the Resistance faces the First Order once more in the final chapter of the Skywalker saga.",
       "nota": 6.9,
-      "urlIMDb": "https://www.imdb.com/title/tt4154664/",
-      "genero": "Ação"
+      "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
+      "genero": "Aventura"
     },
     {
       "id": "10",
@@ -103,23 +103,13 @@
       "genero": "Comédia"
     },
     {
-      "id": "11",
-      "titulo": "Star Wars: A Ascensão Skywalker",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-12-19T03:00:00.000Z",
-      "descricao": "In Theaters Now\nAfter Palpatine mysteriously returns, the Resistance faces the First Order once more in the final chapter of the Skywalker saga.",
-      "nota": 6.9,
-      "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
-      "genero": "Aventura"
-    },
-    {
-      "id": "4",
-      "titulo": "MIB: Homens de Preto - Internacional",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2024-06-18T03:00:00.000Z",
-      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
-      "nota": 5.7,
-      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+      "id": "3",
+      "titulo": "MIB: Homens de Preto III",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTU2NTYxODcwMF5BMl5BanBnXkFtZTcwNDk1NDY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2012-25-11T03:00:00.000Z",
+      "descricao": "Agent J travels in time to M.I.B.'s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.",
+      "nota": 6.8,
+      "urlIMDb": "https://www.imdb.com/title/tt1409024/",
       "genero": "Ação"
     }
   ]

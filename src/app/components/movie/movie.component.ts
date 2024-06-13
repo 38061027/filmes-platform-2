@@ -54,6 +54,7 @@ export class MovieComponent implements OnInit {
     let confirm = window.confirm("Você tem certeza que deseja excluir?")
   if(confirm){
     this.service.removeMovie(id).subscribe(() => {
+    this.service.deleteFavorite(id).subscribe()
       this.spinner = true
       setTimeout(() =>
         this.router.navigateByUrl('')

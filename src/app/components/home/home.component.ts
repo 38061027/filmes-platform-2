@@ -109,10 +109,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  sendFavorites(favorite: any) {
+  sendFavorites(favorite: any, event: Event) {
 
     this.service.getFavorites().subscribe(favorites => {
       const isFavorite = favorites.some((fav: any) => fav.id === favorite.id);
+      const clickedButton = event.target as HTMLElement;
       if (!isFavorite) {
         this.service.sendFavorite(favorite).subscribe((res) => {
           this.favoriteIds.push(favorite.id);
@@ -121,6 +122,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
       } else {
         this.service.deleteFavorite(favorite.id).subscribe(() => {
+          if (clickedButton) {
+            clickedButton.classList.add('scale-effect');
+            setTimeout(() => {
+              clickedButton.classList.remove('scale-effect');
+            }, 500);
+            clickedButton.innerHTML = 'heart_broken';
+            setTimeout(() => {
+              clickedButton.innerHTML = 'favorite';
+            }, 2000);
+          }
           this.favoriteIds = this.favoriteIds.filter((id) => id !== favorite.id);
           this.updateFavoriteButtonColors();
           this.counter--;

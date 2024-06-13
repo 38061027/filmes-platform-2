@@ -41,7 +41,7 @@
                 <p>{{movie.descricao}}</p>
                 <button class="btn-open" mat-flat-button color="accent" [routerLink]="['movie',movie.id]">Abrir</button>
                 <button id="btn-favorite" class="material-symbols-outlined" #btnFavorite title="Adicionar aos favoritos"
-                    (click)="sendFavorites(movie)" [attr.data-id]="movie.id">favorite</button>
+                    (click)="sendFavorites(movie, $event)" [attr.data-id]="movie.id">favorite</button>
             </div>
         </div>
     </div>

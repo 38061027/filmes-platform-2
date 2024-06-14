@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('btnFavorite') btnFavorites!: QueryList<ElementRef>
 
   favoriteIds: string[] = [];
-  movies!: any[]
+  movies: any[] = []
   allMovies!: any[]
   generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia']
   filtrosListagem!: FormGroup
@@ -40,10 +40,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.loadFavorites();
     this.getMovie()
     this.filterMovie()
-
+    this.loadFavorites();
   }
 
 
@@ -55,7 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-  
+
   updateFavoriteButtonColors() {
 
     this.btnFavorites.forEach((btn: any) => {
@@ -80,7 +79,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  
+
 
   getMovie() {
     this.service.getMovie().subscribe((res: any[]) => {
@@ -94,18 +93,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   filterMovie() {
     this.filtrosListagem.valueChanges.subscribe(values => {
       this.service.getMovie().subscribe(res => {
+        let filteredMovies = res;
         if (values.texto !== '') {
-          this.movies = res.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()))
-        } else {
-          this.movies = res
+          filteredMovies = filteredMovies.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()));
         }
+        
         if (values.genero !== '') {
-          this.movies = res.filter(movie => movie.genero === values.genero);
+          filteredMovies = filteredMovies.filter(movie => movie.genero === values.genero);
         }
 
 
+        this.movies = filteredMovies;
+        this.loadFavorites()
       });
-
     });
   }
 

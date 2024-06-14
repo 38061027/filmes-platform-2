@@ -1,7 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-
+    background-color: rgb(28, 28, 28);
+    position: relative;
 }
 
 
@@ -45,7 +46,6 @@
 
 
 .movie {
-    border: 1px solid gray;
     height: 770px;
     width: 350px;
     margin: 10px;
@@ -53,8 +53,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-
+    border-radius: 5px;
+    background-color: #333;
 }
 
 .movie:hover {
@@ -132,5 +132,16 @@
 .scale-effect {
     transform: scale(1.3);
     transition: transform 0.3 ease; 
+  }
+
+  .noData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .noData p{
+    font-size: xx-large;
   }
   

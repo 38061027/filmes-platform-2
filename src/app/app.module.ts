@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     CadastrarFilmeComponent,
     MovieComponent,
     FormularioComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { IMovies } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  urlMovies:string = 'http://localhost:3000/filmes'
-  urlFavorites:string = 'http://localhost:3000/favorites'
+  urlMovies:string = `${environment.API}filmes`
+  urlFavorites:string = `${environment.API}favorites`
 
   lastId: number = 0
 
   constructor(private http: HttpClient) {
-    this.getMovie().subscribe(movies => {
+    this.getMovie().subscribe((movies:IMovies[]) => {
       if (movies.length > 0) {
         const lastMovie = movies[movies.length - 1];
         this.lastId = parseInt(lastMovie.id); 
@@ -22,20 +24,20 @@ export class SharedService {
    }
 
 
-  getMovie():Observable<any[]>{
+  getMovie():Observable<IMovies[]>{
 
-    return this.http.get<any[]>(this.urlMovies)
+    return this.http.get<IMovies[]>(this.urlMovies)
   }
 
-  sendMovie(movie:any):Observable<any>{
+  sendMovie(movie:IMovies):Observable<IMovies[]>{
     this.lastId++;
     movie.id = this.lastId.toString();
-    return this.http.post<any>(this.urlMovies,movie)
+    return this.http.post<IMovies[]>(this.urlMovies,movie)
   }
 
 
-    editMovie(movie:any, id:string | undefined):Observable<any>{
-      return this.http.put<any>(`${this.urlMovies}/${id}`, movie)
+    editMovie(movie:IMovies, id:string | undefined):Observable<IMovies>{
+      return this.http.put<IMovies>(`${this.urlMovies}/${id}`, movie)
     }
   
     removeMovie(id:string){
@@ -46,12 +48,15 @@ export class SharedService {
 
 
 
-    getFavorites():Observable<any[]>{
-      return this.http.get<any[]>(this.urlFavorites)
+
+    // Métodos dos Favoritos
+
+    getFavorites():Observable<IMovies[]>{
+      return this.http.get<IMovies[]>(this.urlFavorites)
     }
 
-    sendFavorite(favorite:any):Observable<any>{
-      return this.http.post<any>(this.urlFavorites,favorite)
+    sendFavorite(favorite:IMovies):Observable<IMovies>{
+      return this.http.post<IMovies>(this.urlFavorites,favorite)
     }
 
     deleteFavorite(id:string){

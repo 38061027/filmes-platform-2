@@ -7,7 +7,7 @@
                 <button mat-menu-item routerLink="cadastro">Cadastrar Filme</button>
                 <button mat-menu-item routerLink="">Home</button>
             </mat-menu>
-            <h1>Meus Filmes</h1>
+            <h1 class="title">Meus Filmes</h1>
 
             <i class="material-symbols-outlined" id="favorite" routerLink="favorites">favorite <p class="counter">
                     {{counter}}</p></i>
@@ -35,7 +35,7 @@
         <div class="movie" *ngFor="let movie of movies" [title]="movie.titulo">
             <div class="title-genre">
                 <h2>{{movie.titulo}}</h2>
-                <p>{{movie.genero}}</p>
+                <p class="genre">{{movie.genero}}</p>
             </div>
             <div class="info">
                 <img class="img" [src]="movie.urlFoto">
@@ -56,6 +56,6 @@
         </div>
     </ng-template>
 
-<app-footer></app-footer>
+<app-footer *ngIf="movies.length"></app-footer>
 
 </main>

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
-
 import { FormularioComponent } from '../formulario/formulario.component';
-import { filter, map } from 'rxjs';
+import { map } from 'rxjs';
+import { IMovies } from 'src/app/interfaces/interface';
 
 @Component({
   selector: 'app-movie',
@@ -15,7 +15,7 @@ export class MovieComponent implements OnInit {
 
   id!: string | null
   spinner: boolean = false
-  movie: any
+  movie!: IMovies | undefined
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -29,7 +29,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getMovie().subscribe((res: any) => {
+    this.service.getMovie().subscribe((res: IMovies[]) => {
       res.forEach((el: any) => {
         if (el.id == this.id) {
           this.movie = el
@@ -45,8 +45,8 @@ export class MovieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.service.getMovie().pipe(
-        map((movies: any[]) => movies.find(movie => movie.id === this.id))
-      ).subscribe(res => this.movie = res);
+        map((movies: IMovies[]) => movies.find((movie:IMovies) => movie.id === this.id))
+      ).subscribe((res) => this.movie = res);
     });
   }
 

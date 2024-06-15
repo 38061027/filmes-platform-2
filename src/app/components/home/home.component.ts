@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { IMovies } from 'src/app/interfaces/interface';
 import { SharedService } from 'src/app/services/shared.service';
 
 
@@ -14,15 +14,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('btnFavorite') btnFavorites!: QueryList<ElementRef>
 
   favoriteIds: string[] = [];
-  movies: any[] = []
-  allMovies!: any[]
+  movies: IMovies[] = []
+  allMovies!: IMovies[]
   generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia']
   filtrosListagem!: FormGroup
   counter: number = 0
 
   constructor(private service: SharedService,
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private renderer: Renderer2
   ) {
 
@@ -72,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   loadFavorites() {
-    this.service.getFavorites().subscribe(res => {
+    this.service.getFavorites().subscribe((res:IMovies[]) => {
       this.counter = res.length;
       this.favoriteIds = res.map(fav => fav.id);
       this.updateFavoriteButtonColors();
@@ -82,7 +81,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   getMovie() {
-    this.service.getMovie().subscribe((res: any[]) => {
+    this.service.getMovie().subscribe((res: IMovies[]) => {
       this.movies = res;
       this.allMovies = res
       this.filterMovie();
@@ -92,8 +91,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   filterMovie() {
     this.filtrosListagem.valueChanges.subscribe(values => {
-      this.service.getMovie().subscribe(res => {
-        let filteredMovies = res;
+      this.service.getMovie().subscribe((res:IMovies[]) => {
+        let filteredMovies:IMovies[] = res;
         if (values.texto !== '') {
           filteredMovies = filteredMovies.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()));
         }
@@ -109,13 +108,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  sendFavorites(favorite: any, event: Event) {
+  sendFavorites(favorite: IMovies, event: Event) {
 
-    this.service.getFavorites().subscribe(favorites => {
+    this.service.getFavorites().subscribe((favorites:IMovies[]) => {
       const isFavorite = favorites.some((fav: any) => fav.id === favorite.id);
       const clickedButton = event.target as HTMLElement;
       if (!isFavorite) {
-        this.service.sendFavorite(favorite).subscribe((res) => {
+        this.service.sendFavorite(favorite).subscribe(() => {
           this.favoriteIds.push(favorite.id);
           this.updateFavoriteButtonColors();
           this.counter++;

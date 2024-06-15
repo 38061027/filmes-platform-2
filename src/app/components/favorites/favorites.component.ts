@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IMovies } from 'src/app/interfaces/interface';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class FavoritesComponent implements OnInit{
 
-  favoritesMovies!:any[]
+  favoritesMovies!:IMovies[]
 
 
   constructor(private service: SharedService){}
@@ -26,7 +27,7 @@ export class FavoritesComponent implements OnInit{
   }
 
   getFavorites(){
-    this.service.getFavorites().subscribe(res => this.favoritesMovies = res)
+    this.service.getFavorites().subscribe((res:IMovies[]) => this.favoritesMovies = res)
   }
 
 }

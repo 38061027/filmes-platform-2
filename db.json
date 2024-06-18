@@ -21,14 +21,14 @@
       "id": "7"
     },
     {
-      "id": "9",
       "titulo": "John Wick 3: Parabellum",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLancamento": "2019-05-16T03:00:00.000Z",
       "descricao": "John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
       "nota": 7.5,
       "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genero": "Ação"
+      "genero": "Ação",
+      "id": "9"
     },
     {
       "titulo": "Mistério no Mediterrâneo 2",
@@ -71,14 +71,14 @@
       "id": "15"
     },
     {
-      "id": "16",
       "titulo": "A Freira",
       "urlFoto": "https://img.redbull.com/images/c_crop,x_570,y_0,h_984,w_787/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2018/09/10/1c3048eb-9e19-4ace-acb7-b666c0574096/filmes-semelhantes-a-freira-01",
       "dtLancamento": "2018-05-08T03:00:00.000Z",
       "descricao": "Um sacerdote e uma noviça são enviados pelo Vaticano a investigar a morte duma joven freira e se confrontar com uma demoníaca força.",
       "nota": 5.3,
       "urlIMDb": "https://www.imdb.com/title/tt5814060/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_a%2520freira",
-      "genero": "Terror"
+      "genero": "Terror",
+      "id": "16"
     }
   ],
   "favorites": [
@@ -91,16 +91,6 @@
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura"
-    },
-    {
-      "id": "9",
-      "titulo": "John Wick 3: Parabellum",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-05-16T03:00:00.000Z",
-      "descricao": "John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
-      "nota": 7.5,
-      "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genero": "Ação"
     },
     {
       "id": "4",

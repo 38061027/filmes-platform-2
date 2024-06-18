@@ -16,7 +16,7 @@ export class FormularioComponent {
   id!:string | undefined
   spinner:boolean = false
 
-  @Input() metodo: 'POST' | 'PUT' = 'POST';
+
 
   constructor(private fb: FormBuilder,
     private service: SharedService,

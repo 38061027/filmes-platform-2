@@ -17,11 +17,11 @@
 
     <div class="filter">
         <form [formGroup]="filtrosListagem" class="form-content">
-            <mat-form-field style="width: 450px;">
+            <mat-form-field class="custom-mat-form-field">
                 <mat-label>Pesquisar</mat-label>
                 <input matInput formControlName="texto">
             </mat-form-field>
-            <mat-form-field style="width: 450px;">
+            <mat-form-field class="custom-mat-form-field">
                 <mat-label>gênero</mat-label>
                 <mat-select formControlName="genero">
                     <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>

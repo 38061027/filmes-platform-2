@@ -36,3 +36,17 @@
    color: red;
    cursor: pointer;
 }
+
+@media screen and (max-width:1290px){
+    .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+}
+@media screen and (max-width:510px){
+    .container-favorite{
+        width: 100%;
+        height: auto;
+    }
+}

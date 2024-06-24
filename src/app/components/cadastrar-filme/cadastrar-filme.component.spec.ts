@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CadastrarFilmeComponent } from './cadastrar-filme.component';
+import { FooterComponent } from '../footer/footer.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('CadastrarFilmeComponent', () => {
   let component: CadastrarFilmeComponent;
@@ -8,7 +10,8 @@ describe('CadastrarFilmeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CadastrarFilmeComponent ]
+      imports:[AppModule],
+      declarations: [ CadastrarFilmeComponent,FooterComponent ]
     })
     .compileComponents();
 

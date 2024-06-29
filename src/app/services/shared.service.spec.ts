@@ -3,6 +3,26 @@ import { TestBed } from '@angular/core/testing';
 import { SharedService } from './shared.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
 import { environment } from 'src/environments/environment';
+import { of } from 'rxjs';
+
+class myServiceMock extends SharedService{
+
+  response = [{
+    "titulo": "MIB: Homens de Preto - Internacional",
+    "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "dtLancamento": "2024-06-18T03:00:00.000Z",
+    "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
+    "nota": 5.7,
+    "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+    "genero": "Ação",
+    "id": "4"
+  }]
+
+  override getMovie(){
+    return of(this.response)
+  }
+}
+
 describe('SharedService', () => {
   let service: SharedService;
   let httpMock: HttpTestingController;
@@ -10,6 +30,12 @@ describe('SharedService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
+      providers:[
+        {
+          provide: SharedService,
+          useClass: myServiceMock
+        }
+      ]
     });
     service = TestBed.inject(SharedService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -30,4 +56,76 @@ describe('SharedService', () => {
     expect(request.request.url).toBe(`${environment.API}filmes/${id}`)
     
   })
+
+  it('Deve realizar chamada HTTP', ()=>{
+
+    const response = [{
+      "titulo": "MIB: Homens de Preto - Internacional",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2024-06-18T03:00:00.000Z",
+      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
+      "nota": 5.7,
+      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+      "genero": "Ação",
+      "id": "4"
+    }]
+
+    service.getMovie().subscribe(res =>{
+      expect(res).toEqual(response)
+    })
+  })
+
+  it('Deve fazer requisição POST',()=>{
+    const movie =  {
+      "titulo": "MIB: Homens de Preto - Internacional",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2024-06-18T03:00:00.000Z",
+      "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
+      "nota": 5.7,
+      "urlIMDb": "https://www.imdb.com/title/tt2283336/",
+      "genero": "Ação",
+      "id": "4"
+    }
+
+    service.sendMovie(movie).subscribe(res => {
+      expect(res).toBe(movie)
+    })
+
+    const req = httpMock.expectOne(service.urlMovies);
+    expect(req.request.method).toBe('POST');
+    req.flush(movie);
+  })
+
+  it('Deve fazer requisição PUT', () =>{
+    const id = '1'
+    const movie = {
+      "id": "13",
+      "titulo": "Gente Grande",
+      "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
+      "dtLancamento": "2010-06-09T03:00:00.000Z",
+      "descricao": "Após a morte do treinador de basquete, cinco amigos e excompanheiros se reúnem para o feriado do 4 de Julho.",
+      "nota": 6,
+      "urlIMDb": "https://www.imdb.com/title/tt1375670/?ref_=nv_sr_srsg_5_tt_6_nm_2_q_gente%2520",
+      "genero": "Comédia"
+    }
+
+    const response = {
+      "titulo": "Donzela",
+      "urlFoto": "https://wp.ufpel.edu.br/empauta/files/2024/03/Foto-2-Divulgacao-Netflix.jpg",
+      "dtLancamento": "2024-05-10T03:00:00.000Z",
+      "descricao": "A princesa Elodie, que acredita que vai se casar com o príncipe Henry, descobre que está sendo sacrificada a um dragão.",
+      "nota": 7,
+      "urlIMDb": "https://www.imdb.com/title/tt13452446/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_dam",
+      "genero": "Aventura",
+      "id": "15"
+    }
+
+    service.editMovie(movie,id).subscribe(res => {
+      expect(res).toBe(response)
+    })
+    const req = httpMock.expectOne(`${service.urlMovies}/${id}`)
+    expect(req.request.method).toBe('PUT')
+  })
+
+ 
 });

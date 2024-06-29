@@ -25,4 +25,11 @@ describe('FormularioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('Deve resetar o formulário',()=>{
+    let spiedComponent = spyOn(component,'reiniciarForm').and.callThrough()
+    component.reiniciarForm()
+
+    expect(spiedComponent).toHaveBeenCalledTimes(1)
+  })
 });

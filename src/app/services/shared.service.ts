@@ -15,24 +15,23 @@ export class SharedService {
   lastId: number = 0
 
   constructor(private http: HttpClient) {
-    this.getMovie().subscribe((movies:IMovies[]) => {
-      if (movies.length > 0) {
+    this.getMovie().subscribe((movies: IMovies[] | undefined) => {
+      if (movies && movies.length > 0) {
         const lastMovie = movies[movies.length - 1];
-        this.lastId = parseInt(lastMovie.id); 
+        this.lastId = parseInt(lastMovie.id, 10); 
       }
     });
    }
 
 
   getMovie():Observable<IMovies[]>{
-
     return this.http.get<IMovies[]>(this.urlMovies)
   }
 
-  sendMovie(movie:IMovies):Observable<IMovies[]>{
+  sendMovie(movie:IMovies):Observable<IMovies>{
     this.lastId++;
     movie.id = this.lastId.toString();
-    return this.http.post<IMovies[]>(this.urlMovies,movie)
+    return this.http.post<IMovies>(this.urlMovies,movie)
   }
 
 

@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   favoriteIds: string[] = [];
   movies: IMovies[] = []
   allMovies!: IMovies[]
-  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia']
+  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
   filtrosListagem!: FormGroup
   counter: number = 0
 
@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   loadFavorites() {
-    this.service.getFavorites().subscribe((res:IMovies[]) => {
+    this.service.getFavorites().subscribe((res: IMovies[]) => {
       this.counter = res.length;
       this.favoriteIds = res.map(fav => fav.id);
       this.updateFavoriteButtonColors();
@@ -91,12 +91,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   filterMovie() {
     this.filtrosListagem.valueChanges.subscribe(values => {
-      this.service.getMovie().subscribe((res:IMovies[]) => {
-        let filteredMovies:IMovies[] = res;
+      this.service.getMovie().subscribe((res: IMovies[]) => {
+        let filteredMovies: IMovies[] = res;
         if (values.texto !== '') {
           filteredMovies = filteredMovies.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()));
         }
-        
+
         if (values.genero !== '') {
           filteredMovies = filteredMovies.filter(movie => movie.genero === values.genero);
         }
@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   sendFavorites(favorite: IMovies, event: Event) {
 
-    this.service.getFavorites().subscribe((favorites:IMovies[]) => {
+    this.service.getFavorites().subscribe((favorites: IMovies[]) => {
       const isFavorite = favorites.some((fav: any) => fav.id === favorite.id);
       const clickedButton = event.target as HTMLElement;
       if (!isFavorite) {

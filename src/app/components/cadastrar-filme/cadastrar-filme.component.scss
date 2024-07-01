@@ -1,4 +1,4 @@
-.container{
+.container {
     position: relative;
 
 }
@@ -16,7 +16,7 @@
 }
 
 
-#back{
+#back {
     position: absolute;
     top: 40px;
     left: 40px;
@@ -27,25 +27,27 @@
     padding: 10px;
     cursor: pointer;
 }
-#back:hover{
-transform: scale(1.2);
-background-color: blue;
+
+#back:hover {
+    transform: scale(1.2);
+    background-color: blue;
 }
 
-.footer{
+.footer {
     width: 100%;
-    
+
 }
 
-@media screen and (max-width:730px){
-    .container{
+@media screen and (max-width:730px) {
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    
+
     }
-    #back{
+
+    #back {
         top: 20px;
     }
 }

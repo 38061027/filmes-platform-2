@@ -5,7 +5,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
 
-class myServiceMock extends SharedService{
+class myServiceMock extends SharedService {
 
   response = [{
     "titulo": "MIB: Homens de Preto - Internacional",
@@ -18,7 +18,7 @@ class myServiceMock extends SharedService{
     "id": "4"
   }]
 
-  override getMovie(){
+  override getMovie() {
     return of(this.response)
   }
 }
@@ -30,7 +30,7 @@ describe('SharedService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers:[
+      providers: [
         {
           provide: SharedService,
           useClass: myServiceMock
@@ -47,17 +47,17 @@ describe('SharedService', () => {
 
   it('Deve excluir filme', () => {
     const id = '2'
-    service.removeMovie(id).subscribe(res =>{
+    service.removeMovie(id).subscribe(res => {
       expect(res).toBe({})
     })
 
     const request = httpMock.expectOne(`${environment.API}filmes/${id}`)
     expect(request.request.method).toBe('DELETE')
     expect(request.request.url).toBe(`${environment.API}filmes/${id}`)
-    
+
   })
 
-  it('Deve realizar chamada HTTP', ()=>{
+  it('Deve realizar chamada HTTP', () => {
 
     const response = [{
       "titulo": "MIB: Homens de Preto - Internacional",
@@ -70,13 +70,13 @@ describe('SharedService', () => {
       "id": "4"
     }]
 
-    service.getMovie().subscribe(res =>{
+    service.getMovie().subscribe(res => {
       expect(res).toEqual(response)
     })
   })
 
-  it('Deve fazer requisição POST',()=>{
-    const movie =  {
+  it('Deve fazer requisição POST', () => {
+    const movie = {
       "titulo": "MIB: Homens de Preto - Internacional",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDZkODI2ZGItYTY5Yi00MTA4LWExY2ItM2ZmNjczYjM0NDg1XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLancamento": "2024-06-18T03:00:00.000Z",
@@ -96,7 +96,7 @@ describe('SharedService', () => {
     req.flush(movie);
   })
 
-  it('Deve fazer requisição PUT', () =>{
+  it('Deve fazer requisição PUT', () => {
     const id = '1'
     const movie = {
       "id": "13",
@@ -120,12 +120,12 @@ describe('SharedService', () => {
       "id": "15"
     }
 
-    service.editMovie(movie,id).subscribe(res => {
+    service.editMovie(movie, id).subscribe(res => {
       expect(res).toBe(response)
     })
     const req = httpMock.expectOne(`${service.urlMovies}/${id}`)
     expect(req.request.method).toBe('PUT')
   })
 
- 
+
 });

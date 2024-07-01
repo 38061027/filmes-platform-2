@@ -11,16 +11,16 @@ describe('MovieComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, HttpClientTestingModule,MatDialogModule],
-      declarations: [ MovieComponent ],
-      providers:[
+      imports: [RouterTestingModule, HttpClientTestingModule, MatDialogModule],
+      declarations: [MovieComponent],
+      providers: [
         {
-          provide:MAT_DIALOG_DATA,
+          provide: MAT_DIALOG_DATA,
           useValue: {}
         }
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MovieComponent);
     component = fixture.componentInstance;

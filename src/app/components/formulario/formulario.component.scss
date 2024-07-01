@@ -1,4 +1,3 @@
-
 .container-card {
     padding: 10px;
     width: 100%;
@@ -21,25 +20,26 @@
 
 
 
-.btn-content{
+.btn-content {
     display: flex;
     justify-content: space-evenly;
 
 }
 
-.btn-content button{
+.btn-content button {
     width: 200px;
 }
 
-@media screen and (max-width:725px){
-    .container-card{
+@media screen and (max-width:725px) {
+    .container-card {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0px;
     }
-    .btn-content button{
+
+    .btn-content button {
         width: 150px;
     }
 }

@@ -45,22 +45,22 @@ export class MovieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.service.getMovie().pipe(
-        map((movies: IMovies[]) => movies.find((movie:IMovies) => movie.id === this.id))
+        map((movies: IMovies[]) => movies.find((movie: IMovies) => movie.id === this.id))
       ).subscribe((res) => this.movie = res);
     });
   }
 
   removeMovie(id: string) {
     let confirm = window.confirm("Você tem certeza que deseja excluir?")
-  if(confirm){
-    this.service.removeMovie(id).subscribe(() => {
-    this.service.deleteFavorite(id).subscribe()
-      this.spinner = true
-      setTimeout(() =>
-        this.router.navigateByUrl('')
-        , 1200)
-    })
-  }
+    if (confirm) {
+      this.service.removeMovie(id).subscribe(() => {
+        this.service.deleteFavorite(id).subscribe()
+        this.spinner = true
+        setTimeout(() =>
+          this.router.navigateByUrl('')
+          , 1200)
+      })
+    }
   }
 
 }

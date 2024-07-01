@@ -9,8 +9,8 @@ import { IMovies } from '../interfaces/interface';
 })
 export class SharedService {
 
-  urlMovies:string = `${environment.API}filmes`
-  urlFavorites:string = `${environment.API}favorites`
+  urlMovies: string = `${environment.API}filmes`
+  urlFavorites: string = `${environment.API}favorites`
 
   lastId: number = 0
 
@@ -18,48 +18,48 @@ export class SharedService {
     this.getMovie().subscribe((movies: IMovies[] | undefined) => {
       if (movies && movies.length > 0) {
         const lastMovie = movies[movies.length - 1];
-        this.lastId = parseInt(lastMovie.id, 10); 
+        this.lastId = parseInt(lastMovie.id, 10);
       }
     });
-   }
+  }
 
 
-  getMovie():Observable<IMovies[]>{
+  getMovie(): Observable<IMovies[]> {
     return this.http.get<IMovies[]>(this.urlMovies)
   }
 
-  sendMovie(movie:IMovies):Observable<IMovies>{
+  sendMovie(movie: IMovies): Observable<IMovies> {
     this.lastId++;
     movie.id = this.lastId.toString();
-    return this.http.post<IMovies>(this.urlMovies,movie)
+    return this.http.post<IMovies>(this.urlMovies, movie)
   }
 
 
-    editMovie(movie:IMovies, id:string | undefined):Observable<IMovies>{
-      return this.http.put<IMovies>(`${this.urlMovies}/${id}`, movie)
-    }
-  
-    removeMovie(id:string){
-      return this.http.delete(`${this.urlMovies}/${id}`)
-    }
+  editMovie(movie: IMovies, id: string | undefined): Observable<IMovies> {
+    return this.http.put<IMovies>(`${this.urlMovies}/${id}`, movie)
+  }
+
+  removeMovie(id: string) {
+    return this.http.delete(`${this.urlMovies}/${id}`)
+  }
 
 
 
 
 
 
-    // Métodos dos Favoritos
+  // Métodos dos Favoritos
 
-    getFavorites():Observable<IMovies[]>{
-      return this.http.get<IMovies[]>(this.urlFavorites)
-    }
+  getFavorites(): Observable<IMovies[]> {
+    return this.http.get<IMovies[]>(this.urlFavorites)
+  }
 
-    sendFavorite(favorite:IMovies):Observable<IMovies>{
-      return this.http.post<IMovies>(this.urlFavorites,favorite)
-    }
+  sendFavorite(favorite: IMovies): Observable<IMovies> {
+    return this.http.post<IMovies>(this.urlFavorites, favorite)
+  }
 
-    deleteFavorite(id:string){
-      return this.http.delete(`${this.urlFavorites}/${id}`)
-    }
+  deleteFavorite(id: string) {
+    return this.http.delete(`${this.urlFavorites}/${id}`)
+  }
 
 }

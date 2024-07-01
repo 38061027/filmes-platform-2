@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,25 +7,27 @@
     position: relative;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     border: 1px solid gray;
-  
+
 }
-.img{
+
+.img {
     width: 35%;
     height: 400px;
     display: flex;
     justify-content: center;
 }
-.img img{
-    width: 50%; 
+
+.img img {
+    width: 50%;
 }
 
-.content-info{
+.content-info {
     width: 65%;
     height: 400px;
     display: flex;
@@ -35,17 +37,18 @@
 }
 
 
-.nota{
+.nota {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.nota p{
-color: yellow;
+
+.nota p {
+    color: yellow;
 }
 
-#back{
+#back {
     position: absolute;
     top: 40px;
     left: 40px;
@@ -56,52 +59,56 @@ color: yellow;
     padding: 10px;
     cursor: pointer;
 }
-#back:hover{
-transform: scale(1.2);
-background-color: blue;
+
+#back:hover {
+    transform: scale(1.2);
+    background-color: blue;
 }
 
-.btn-content-movie{
+.btn-content-movie {
     display: flex;
     margin-top: 20px;
     gap: 20px;
 
 }
-.btn-content-movie button{
+
+.btn-content-movie button {
     width: 200px;
 
 }
-.spinner{
+
+.spinner {
     margin-top: 20px;
 }
 
 @media screen and (max-width:840px) {
-    .content{
+    .content {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 20px;
     }
 
-    .img{
+    .img {
         height: auto;
     }
-    .img img{
-        width: 200px; 
+
+    .img img {
+        width: 200px;
         height: 250px;
     }
-    
-    .btn-content-movie button{
+
+    .btn-content-movie button {
         width: 150px;
-    
+
     }
 
-    .content-info{
+    .content-info {
         height: auto;
     }
 
-    #back{
+    #back {
         top: 10px;
     }
 

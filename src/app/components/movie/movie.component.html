@@ -2,7 +2,7 @@
 
     <span class="material-symbols-outlined" id="back" routerLink="">
         arrow_back
-        </span>
+    </span>
 
     <div class="content">
         <div class="img">
@@ -16,9 +16,9 @@
             <p>{{movie.descricao}}</p>
             <i>Data de Lançamento - {{movie.dtLancamento | date:'dd/MM/yyyy' }}</i>
             <div class="nota">
-                    <h2>AVALIAÇÃO DA IMDb</h2>
-                    <h2>{{movie.nota}}</h2>
-                    <p class="material-symbols-outlined">star</p>
+                <h2>AVALIAÇÃO DA IMDb</h2>
+                <h2>{{movie.nota}}</h2>
+                <p class="material-symbols-outlined">star</p>
             </div>
         </div>
     </div>
@@ -31,5 +31,5 @@
     <mat-spinner class="spinner" *ngIf="spinner" [color]="'warn'"></mat-spinner>
 
     <!-- <app-footer style="position: absolute; bottom: 0; width: 100%;"></app-footer> -->
- 
+
 </div>

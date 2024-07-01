@@ -6,10 +6,10 @@ import { MovieComponent } from './components/movie/movie.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"cadastro", component:CadastrarFilmeComponent},
-  {path:"movie/:id", component:MovieComponent},
-  {path:"favorites", component:FavoritesComponent}
+  { path: "", component: HomeComponent },
+  { path: "cadastro", component: CadastrarFilmeComponent },
+  { path: "movie/:id", component: MovieComponent },
+  { path: "favorites", component: FavoritesComponent }
 ];
 
 @NgModule({

@@ -14,11 +14,13 @@ describe('FormularioComponent', () => {
   let fixture: ComponentFixture<FormularioComponent>;
   let service: SharedService;
   let router: Router;
+
   
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, MaterialModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
-      declarations: [FormularioComponent]
+      declarations: [FormularioComponent],
     })
       .compileComponents();
 
@@ -27,6 +29,7 @@ describe('FormularioComponent', () => {
     fixture.detectChanges();
     service = TestBed.inject(SharedService);
     router = TestBed.inject(Router);
+
   });
 
   it('should create', () => {

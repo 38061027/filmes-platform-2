@@ -18,7 +18,12 @@
         <form [formGroup]="filtrosListagem" class="form-content">
             <mat-form-field class="custom-mat-form-field">
                 <mat-label>Pesquisar</mat-label>
-                <input matInput formControlName="texto">
+                <input [matAutocomplete]="auto" matInput formControlName="texto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-autocomplete>
             </mat-form-field>
             <mat-form-field class="custom-mat-form-field">
                 <mat-label>gênero</mat-label>

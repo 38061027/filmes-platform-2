@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { map, Observable, startWith } from 'rxjs';
 import { IMovies } from 'src/app/interfaces/interface';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -19,6 +20,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
   filtrosListagem!: FormGroup
   counter: number = 0
+  filteredOptions!: Observable<string[]>;
+
 
   constructor(private service: SharedService,
     private fb: FormBuilder,
@@ -42,8 +45,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.getMovie()
     this.filterMovie()
     this.loadFavorites();
+
+
+    this.filteredOptions = this.filtrosListagem.get('texto')!.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || ''))
+    );
   }
 
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.movies
+      .map(movie => movie.titulo)
+      .filter(titulo => titulo.toLowerCase().includes(filterValue));
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -77,6 +92,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.updateFavoriteButtonColors();
     });
   }
+
 
 
 

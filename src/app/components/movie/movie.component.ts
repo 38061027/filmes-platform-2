@@ -29,7 +29,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getMovie().subscribe((res: IMovies[]) => {
+    this.service.getMovies().subscribe((res: IMovies[]) => {
       res.forEach((el: any) => {
         if (el.id == this.id) {
           this.movie = el
@@ -44,7 +44,7 @@ export class MovieComponent implements OnInit {
     const dialogRef = this.dialog.open(FormularioComponent)
 
     dialogRef.afterClosed().subscribe(() => {
-      this.service.getMovie().pipe(
+      this.service.getMovies().pipe(
         map((movies: IMovies[]) => movies.find((movie: IMovies) => movie.id === this.id))
       ).subscribe((res) => this.movie = res);
     });

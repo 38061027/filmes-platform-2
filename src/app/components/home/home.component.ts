@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { map, Observable, startWith } from 'rxjs';
+import { debounceTime, map, Observable, startWith } from 'rxjs';
 import { IMovies } from 'src/app/interfaces/interface';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -11,14 +11,12 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
   @ViewChildren('btnFavorite') btnFavorites!: QueryList<ElementRef>
 
   favoriteIds: string[] = [];
   movies: IMovies[] = []
-  allMovies!: IMovies[]
-  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
-  filtrosListagem!: FormGroup
+  genre: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
+  filterList!: FormGroup
   counter: number = 0
   filteredOptions!: Observable<string[]>;
 
@@ -28,7 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private renderer: Renderer2
   ) {
 
-    this.filtrosListagem = this.fb.group({
+    this.filterList = this.fb.group({
       texto: [''],
       genero: ['']
     })
@@ -45,9 +43,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.getMovie()
     this.filterMovie()
     this.loadFavorites();
-
-
-    this.filteredOptions = this.filtrosListagem.get('texto')!.valueChanges.pipe(
+    this.filteredOptions = this.filterList.get('texto')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || ''))
     );
@@ -70,7 +66,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   updateFavoriteButtonColors() {
-
     this.btnFavorites.forEach((btn: any) => {
       const buttonElement = btn.nativeElement;
       const favoriteId = buttonElement.getAttribute('data-id');
@@ -78,7 +73,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.renderer.setStyle(buttonElement, 'color', 'red');
       } else {
         this.renderer.setStyle(buttonElement, 'color', 'white');
-
       }
     });
   }
@@ -97,27 +91,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   getMovie() {
-    this.service.getMovie().subscribe((res: IMovies[]) => {
+    this.service.getMovies().subscribe((res: IMovies[]) => {
       this.movies = res;
-      this.allMovies = res
-      this.filterMovie();
     });
   }
 
 
   filterMovie() {
-    this.filtrosListagem.valueChanges.subscribe(values => {
-      this.service.getMovie().subscribe((res: IMovies[]) => {
+    this.filterList.valueChanges.pipe(debounceTime(1000)).subscribe(values => {
+      this.service.getMovies().subscribe((res: IMovies[]) => {
         let filteredMovies: IMovies[] = res;
         if (values.texto !== '') {
           filteredMovies = filteredMovies.filter(movie => movie.titulo.toLowerCase().startsWith(values.texto.toLowerCase()));
         }
-
         if (values.genero !== '') {
           filteredMovies = filteredMovies.filter(movie => movie.genero === values.genero);
         }
-
-
         this.movies = filteredMovies;
         this.loadFavorites()
       });

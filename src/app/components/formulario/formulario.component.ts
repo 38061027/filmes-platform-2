@@ -11,8 +11,8 @@ import { SharedService } from 'src/app/services/shared.service';
 export class FormularioComponent {
 
   radius!: number;
-  generos: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
-  cadastro!: FormGroup
+  genre: string[] = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Drama', 'Fantasia', 'Animação']
+  register!: FormGroup
   id!: string | undefined
   spinner: boolean = false
 
@@ -32,7 +32,7 @@ export class FormularioComponent {
   ngOnInit(): void {
 
     if (this.id) {
-      this.service.getMovie().subscribe(res => {
+      this.service.getMovies().subscribe(res => {
         const filme = res.find((el: any) => el.id == this.id);
         if (filme) {
           this.preencherFormulario(filme);
@@ -43,7 +43,7 @@ export class FormularioComponent {
   }
 
   inicializarFormulario(): void {
-    this.cadastro = this.fb.group({
+    this.register = this.fb.group({
       titulo: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
       urlFoto: ['', [Validators.minLength(10)]],
       dtLancamento: ['', [Validators.required]],
@@ -55,7 +55,7 @@ export class FormularioComponent {
   }
 
   preencherFormulario(filme: any): void {
-    this.cadastro.setValue({
+    this.register.setValue({
       titulo: filme.titulo,
       urlFoto: filme.urlFoto,
       dtLancamento: filme.dtLancamento,
@@ -71,21 +71,21 @@ export class FormularioComponent {
       if (this.id && this.id !== 'undefined') {
         this.spinner = true
         setTimeout(() => this.spinner = false, 1200)
-        this.service.editMovie(this.cadastro.value, this.id).subscribe();
+        this.service.editMovie(this.register.value, this.id).subscribe();
       } else {
         this.router.navigateByUrl('')
-        this.service.sendMovie(this.cadastro.value).subscribe();
+        this.service.sendMovie(this.register.value).subscribe();
       }
     }
 
   }
 
   reiniciarForm() {
-    this.cadastro.reset()
+    this.register.reset()
   }
 
   isValidForm():boolean{
-    return this.cadastro.valid
+    return this.register.valid
   }
 
 

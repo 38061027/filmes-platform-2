@@ -1,7 +1,7 @@
 <div class="container-form">
   <mat-card class="container-card">
     <mat-card-content class="card">
-      <form class="content" [formGroup]="cadastro" (ngSubmit)="onSubmit()">
+      <form class="content" [formGroup]="register" (ngSubmit)="onSubmit()">
         <mat-form-field>
           <mat-label>Titulo</mat-label>
           <input matInput formControlName="titulo">
@@ -19,7 +19,7 @@
         <mat-form-field>
           <mat-label>Gênero</mat-label>
           <mat-select formControlName="genero">
-            <mat-option *ngFor="let genre of generos" [value]="genre">{{genre}}</mat-option>
+            <mat-option *ngFor="let genre of genre" [value]="genre">{{genre}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -35,7 +35,7 @@
           <textarea matInput formControlName="descricao"></textarea>
         </mat-form-field>
         <div class="btn-content">
-          <button mat-raised-button color="primary" type="submit" [disabled]="cadastro.invalid">Salvar</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="register.invalid">Salvar</button>
           <button mat-raised-button color="warn" type="reset">Limpar Tudo</button>
         </div>
       </form>

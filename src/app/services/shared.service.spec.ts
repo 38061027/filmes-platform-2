@@ -19,7 +19,7 @@ class myServiceMock extends SharedService {
     "id": "4"
   }]
 
-  override getMovie() {
+  override getMovies() {
     return of(this.response)
   }
 }
@@ -71,7 +71,7 @@ describe('SharedService', () => {
       "id": "4"
     }]
 
-    service.getMovie().subscribe(res => {
+    service.getMovies().subscribe(res => {
       expect(res).toEqual(response)
     })
   })

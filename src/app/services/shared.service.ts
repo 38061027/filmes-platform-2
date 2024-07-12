@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IMovies } from '../interfaces/interface';
 
@@ -8,14 +8,15 @@ import { IMovies } from '../interfaces/interface';
   providedIn: 'root'
 })
 export class SharedService{
-
+  private moviesSubject = new BehaviorSubject<IMovies[]>([])
+  public movies$ = this.moviesSubject.asObservable();
+  private dataLoaded = false;
   urlMovies: string = `${environment.API}filmes`
   urlFavorites: string = `${environment.API}favorites`
-
   lastId: number = 0
 
   constructor(private http: HttpClient) {
-    this.getMovie().subscribe((movies: IMovies[] | undefined) => {
+    this.getMovies().subscribe((movies: IMovies[] | undefined) => {
       if (movies && movies.length > 0) {
         const lastMovie = movies[movies.length - 1];
         this.lastId = parseInt(lastMovie.id, 10);
@@ -24,12 +25,14 @@ export class SharedService{
   }
 
 
-  getMock():Observable<any[]>{
-    return this.http.get<any[]>(this.urlMovies)
-  }
-
-  getMovie(): Observable<IMovies[]> {
-    return this.http.get<IMovies[]>(this.urlMovies)
+  getMovies(): Observable<IMovies[]> {
+    if (!this.dataLoaded) {
+      this.http.get<IMovies[]>(this.urlMovies).subscribe(data => {
+        this.moviesSubject.next(data);
+        this.dataLoaded = true;
+      });
+    }
+    return this.movies$;
   }
 
   sendMovie(movie: IMovies): Observable<IMovies> {

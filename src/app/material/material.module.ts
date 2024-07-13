@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';;
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const MODULES = [
@@ -25,7 +26,9 @@ const MODULES = [
   MatNativeDateModule,
   MatDialogModule,
   MatProgressSpinnerModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  ReactiveFormsModule,
+  FormsModule
 ]
 
 @NgModule({

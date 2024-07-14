@@ -7,12 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
-import { MatNativeDateModule } from '@angular/material/core';;
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 const MODULES = [
   MatSelectModule,
@@ -28,16 +27,12 @@ const MODULES = [
   MatProgressSpinnerModule,
   MatAutocompleteModule,
   ReactiveFormsModule,
-  FormsModule
-]
+  FormsModule,
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    MODULES
-  ],
+  imports: [CommonModule, MODULES],
   exports: [MODULES],
-
 })
-export class MaterialModule { }
+export class MaterialModule {}

@@ -6,14 +6,26 @@ import { MovieComponent } from './components/movie/movie.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch:'full' },
-  { path: "cadastro", loadChildren: () => import('./components/cadastrar-filme/module/module.module').then(m => m.ModuleModule) },
-  { path: "movie/:id", component: MovieComponent },
-  { path: "favorites", loadChildren: () => import('./components/favorites/module/module.module').then(m => m.ModuleModule) }
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  {
+    path: 'cadastro',
+    loadChildren: () =>
+      import('./components/cadastrar-filme/module/module.module').then(
+        (m) => m.ModuleModule
+      ),
+  },
+  { path: 'movie/:id', component: MovieComponent },
+  {
+    path: 'favorites',
+    loadChildren: () =>
+      import('./components/favorites/module/module.module').then(
+        (m) => m.ModuleModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

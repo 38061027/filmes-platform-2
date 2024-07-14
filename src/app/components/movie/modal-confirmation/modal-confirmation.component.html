@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Remover Filme</h2>
+<mat-dialog-content>
+  Você Realmente quer excluir o filme?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="onCancel()">Não</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="onConfirm()">Sim</button>
+</mat-dialog-actions>

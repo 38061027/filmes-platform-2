@@ -11,36 +11,6 @@
       "id": "7"
     },
     {
-      "titulo": "John Wick 3: Parabellum",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-05-16T03:00:00.000Z",
-      "descricao": "John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
-      "nota": 7.5,
-      "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genero": "Ação",
-      "id": "9"
-    },
-    {
-      "titulo": "Mistério no Mediterrâneo 2",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BNTA2YTI5YjUtZWI4Zi00NWQ5LWFiYmEtOTBmNTUyNDAwNjllXkEyXkFqcGdeQXVyNjIzNzM4NzA@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-06-14T03:00:00.000Z",
-      "descricao": "A New York cop and his wife go on a European vacation to reinvigorate the spark in their marriage, but end up getting framed and on the run for the death of an elderly billionaire.",
-      "nota": 6,
-      "urlIMDb": "https://www.imdb.com/title/tt1618434/",
-      "genero": "Comédia",
-      "id": "10"
-    },
-    {
-      "titulo": "Star Wars: A Ascensão Skywalker",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-12-19T03:00:00.000Z",
-      "descricao": "In Theaters Now\nAfter Palpatine mysteriously returns, the Resistance faces the First Order once more in the final chapter of the Skywalker saga.",
-      "nota": 6.9,
-      "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
-      "genero": "Aventura",
-      "id": "11"
-    },
-    {
       "id": "13",
       "titulo": "Gente Grande",
       "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
@@ -49,16 +19,6 @@
       "nota": 6,
       "urlIMDb": "https://www.imdb.com/title/tt1375670/?ref_=nv_sr_srsg_5_tt_6_nm_2_q_gente%2520",
       "genero": "Comédia"
-    },
-    {
-      "titulo": "Donzela",
-      "urlFoto": "https://wp.ufpel.edu.br/empauta/files/2024/03/Foto-2-Divulgacao-Netflix.jpg",
-      "dtLancamento": "2024-05-10T03:00:00.000Z",
-      "descricao": "A princesa Elodie, que acredita que vai se casar com o príncipe Henry, descobre que está sendo sacrificada a um dragão.",
-      "nota": 7,
-      "urlIMDb": "https://www.imdb.com/title/tt13452446/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_dam",
-      "genero": "Aventura",
-      "id": "15"
     },
     {
       "titulo": "A Freira",
@@ -93,24 +53,34 @@
   ],
   "favorites": [
     {
-      "id": "10",
-      "titulo": "Mistério no Mediterrâneo 2",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BNTA2YTI5YjUtZWI4Zi00NWQ5LWFiYmEtOTBmNTUyNDAwNjllXkEyXkFqcGdeQXVyNjIzNzM4NzA@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2019-06-14T03:00:00.000Z",
-      "descricao": "A New York cop and his wife go on a European vacation to reinvigorate the spark in their marriage, but end up getting framed and on the run for the death of an elderly billionaire.",
+      "id": "18",
+      "titulo": "Ele é Demais",
+      "urlFoto": "https://br.web.img3.acsta.net/pictures/21/08/05/10/09/3049342.jpg",
+      "dtLancamento": "2021-02-02T03:00:00.000Z",
+      "descricao": "A adolescente e influencer Padgett leva um fora ao vivo, e o vídeo viraliza. Para salvar sua reputação, ela faz uma aposta arriscada: promete transformar Cameron, um garoto antissocial, em rei do baile do colégio.",
+      "nota": 4.4,
+      "urlIMDb": "https://www.imdb.com/title/tt4590256/",
+      "genero": "Romance"
+    },
+    {
+      "id": "13",
+      "titulo": "Gente Grande",
+      "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
+      "dtLancamento": "2010-06-09T03:00:00.000Z",
+      "descricao": "Após a morte do treinador de basquete, cinco amigos e excompanheiros se reúnem para o feriado do 4 de Julho.",
       "nota": 6,
-      "urlIMDb": "https://www.imdb.com/title/tt1618434/",
+      "urlIMDb": "https://www.imdb.com/title/tt1375670/?ref_=nv_sr_srsg_5_tt_6_nm_2_q_gente%2520",
       "genero": "Comédia"
     },
     {
-      "id": "17",
-      "titulo": "Carros",
-      "urlFoto": "https://play-lh.googleusercontent.com/kHt8qbche40zkE6yZwA8IUe5ARINp4PjrJ5mi622GEzQFYWCaGTQDAl58rrRKRKyhnD2=w240-h480-rw",
-      "dtLancamento": "2006-06-14T03:00:00.000Z",
-      "descricao": "Um carro de corridas chamado Relâmpago McQueen é desviado para Radiator Springs, onde ele encontra o verdadeiro significado da amizade e da família.",
-      "nota": 7.2,
-      "urlIMDb": "https://www.imdb.com/title/tt0317219/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_carros",
-      "genero": "Animação"
+      "id": "7",
+      "titulo": "Capitã Marvel",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-03-07T03:00:00.000Z",
+      "descricao": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+      "nota": 6.9,
+      "urlIMDb": "https://www.imdb.com/title/tt4154664/",
+      "genero": "Ação"
     }
   ]
 }

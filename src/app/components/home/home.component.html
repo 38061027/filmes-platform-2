@@ -1,66 +1,96 @@
 <main class="container">
-    <header class="container-header">
-        <div class="header-items">
-            <span mat-button [matMenuTriggerFor]="menu" id="menu-btn" class="material-symbols-outlined">menu</span>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item routerLink="cadastro">Cadastrar Filme</button>
-                <button mat-menu-item routerLink="">Home</button>
-            </mat-menu>
-            <h1 class="title">Meus Filmes</h1>
+  <header class="container-header">
+    <div class="header-items">
+      <span
+        mat-button
+        [matMenuTriggerFor]="menu"
+        id="menu-btn"
+        class="material-symbols-outlined"
+        >menu</span
+      >
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="cadastro">Cadastrar Filme</button>
+        <button mat-menu-item routerLink="">Home</button>
+      </mat-menu>
+      <h1 class="title">Meus Filmes</h1>
 
-            <i class="material-symbols-outlined" id="favorite" routerLink="favorites">favorite <p class="counter">
-                    {{counter}}</p></i>
-
-        </div>
-    </header>
-
-    <div class="filter">
-        <form [formGroup]="filterList" class="form-content">
-            <mat-form-field class="custom-mat-form-field">
-                <mat-label>Pesquisar</mat-label>
-                <input [matAutocomplete]="auto" matInput formControlName="texto">
-                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                        {{ option }}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-            <mat-form-field class="custom-mat-form-field">
-                <mat-label>gênero</mat-label>
-                <mat-select formControlName="genero">
-                    <mat-option *ngFor="let genre of genre
-                    " [value]="genre">{{genre}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </form>
+      <i class="material-symbols-outlined" id="favorite" routerLink="favorites"
+        >favorite
+        <p class="counter">
+          {{ counter }}
+        </p></i
+      >
     </div>
+  </header>
 
+  <div class="filter">
+    <form [formGroup]="filterList" class="form-content">
+      <mat-form-field class="custom-mat-form-field">
+        <mat-label>Pesquisar</mat-label>
+        <input [matAutocomplete]="auto" matInput formControlName="texto" />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field class="custom-mat-form-field">
+        <mat-label>gênero</mat-label>
+        <mat-select formControlName="genero">
+          <mat-option *ngFor="let genre of genres" [value]="genre">{{
+            genre
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
 
-    <div class="movies" *ngIf="movies.length; else semRegistro">
-        <div class="movie" *ngFor="let movie of movies" [title]="movie.titulo">
-            <div class="title-genre">
-                <h2>{{movie.titulo}}</h2>
-                <p class="genre">{{movie.genero}}</p>
-            </div>
-            <div class="info">
-                <img class="img" [src]="movie.urlFoto">
-                <p>{{movie.descricao}}</p>
-                <button class="btn-open" mat-flat-button color="accent" [routerLink]="['movie',movie.id]">Abrir</button>
-                <button id="btn-favorite" class="material-symbols-outlined" #btnFavorite title="Adicionar aos favoritos"
-                    (click)="sendFavorites(movie, $event)" [attr.data-id]="movie.id">favorite</button>
-            </div>
-        </div>
+  <div class="movies" *ngIf="movies.length; else noRegister">
+    <div class="movie" *ngFor="let movie of movies" [title]="movie.titulo">
+      <div class="title-genre">
+        <h2>{{ movie.titulo }}</h2>
+        <p class="genre">{{ movie.genero }}</p>
+      </div>
+      <div class="info">
+        <img class="img" [src]="movie.urlFoto" />
+        <p>{{ movie.descricao }}</p>
+        <button
+          class="btn-open"
+          mat-flat-button
+          color="accent"
+          [routerLink]="['movie', movie.id]"
+        >
+          Abrir
+        </button>
+        <button
+          id="btn-favorite"
+          class="material-symbols-outlined"
+          #btnFavorite
+          title="Adicionar aos favoritos"
+          (click)="sendFavorites(movie, $event); msg(true)"
+          [attr.data-id]="movie.id"
+
+        >
+          favorite
+        </button>
+      </div>
     </div>
+  </div>
 
-    <ng-template #semRegistro>
-        <div class="noData">
-            <p class="material-symbols-outlined">
-                search
-            </p>
-            <h1>Nenhum Filme Encontrado!</h1>
-        </div>
-    </ng-template>
+  <ng-template #noRegister>
+    <div class="noData">
+      <p class="material-symbols-outlined">search</p>
+      <h1>Nenhum Filme Encontrado!</h1>
+    </div>
+  </ng-template>
 
-
-
+  <div class="msg-content" *ngIf="btn">
+    <span class="msg">
+      <h2 #notification>Você adicionou o filme {{movieName}} aos favoritos</h2>
+    </span>
+    <span id="check" #ckeck class="material-symbols-outlined"> check </span>
+  </div>
 </main>

@@ -4,39 +4,57 @@
       <form class="content" [formGroup]="register" (ngSubmit)="onSubmit()">
         <mat-form-field>
           <mat-label>Titulo</mat-label>
-          <input matInput formControlName="titulo">
+          <input matInput formControlName="titulo" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Link da Foto</mat-label>
-          <input matInput formControlName="urlFoto">
+          <input matInput formControlName="urlFoto" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Data de Lançamento</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="dtLancamento">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="dtLancamento"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Gênero</mat-label>
           <mat-select formControlName="genero">
-            <mat-option *ngFor="let genre of genre" [value]="genre">{{genre}}</mat-option>
+            <mat-option *ngFor="let genre of genres" [value]="genre">{{
+              genre
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Link IMDb</mat-label>
-          <input matInput formControlName="urlIMDb">
+          <input matInput formControlName="urlIMDb" />
         </mat-form-field>
         <mat-form-field class="example-ripple-form-field">
           <mat-label>Radius</mat-label>
-          <input matInput formControlName="nota" type="number">
+          <input matInput formControlName="nota" type="number" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Descrição</mat-label>
           <textarea matInput formControlName="descricao"></textarea>
         </mat-form-field>
         <div class="btn-content">
-          <button mat-raised-button color="primary" type="submit" [disabled]="register.invalid">Salvar</button>
-          <button mat-raised-button color="warn" type="reset">Limpar Tudo</button>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="register.invalid"
+          >
+            Salvar
+          </button>
+          <button mat-raised-button color="warn" type="reset">
+            Limpar Tudo
+          </button>
         </div>
       </form>
       <mat-spinner *ngIf="spinner" [color]="'primary'"></mat-spinner>

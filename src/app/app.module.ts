@@ -9,15 +9,10 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
-
-
+import { ModalConfirmationComponent } from './components/movie/modal-confirmation/modal-confirmation.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    MovieComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, MovieComponent, ModalConfirmationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,9 +20,9 @@ import { MovieComponent } from './components/movie/movie.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

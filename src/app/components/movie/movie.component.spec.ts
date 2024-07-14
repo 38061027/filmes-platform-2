@@ -8,8 +8,6 @@ import { SharedService } from 'src/app/services/shared.service';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
-
-
 describe('MovieComponent', () => {
   let component: MovieComponent;
   let fixture: ComponentFixture<MovieComponent>;
@@ -19,11 +17,13 @@ describe('MovieComponent', () => {
   beforeEach(async () => {
     movieServiceMock = {
       removeMovie: jasmine.createSpy('removeMovie').and.returnValue(of({})),
-      deleteFavorite: jasmine.createSpy('deleteFavorite').and.returnValue(of({}))
+      deleteFavorite: jasmine
+        .createSpy('deleteFavorite')
+        .and.returnValue(of({})),
     };
 
     routerMock = {
-      navigateByUrl: jasmine.createSpy('navigateByUrl')
+      navigateByUrl: jasmine.createSpy('navigateByUrl'),
     };
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule, MatDialogModule],
@@ -31,13 +31,12 @@ describe('MovieComponent', () => {
       providers: [
         {
           provide: MAT_DIALOG_DATA,
-          useValue: {}
+          useValue: {},
         },
         { provide: SharedService, useValue: movieServiceMock },
-        { provide: Router, useValue: routerMock }
-      ]
-    })
-      .compileComponents();
+        { provide: Router, useValue: routerMock },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MovieComponent);
     component = fixture.componentInstance;
@@ -47,7 +46,4 @@ describe('MovieComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
-
-
 });

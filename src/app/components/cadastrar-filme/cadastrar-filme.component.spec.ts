@@ -10,10 +10,9 @@ describe('CadastrarFilmeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[AppModule],
-      declarations: [ CadastrarFilmeComponent,FooterComponent ]
-    })
-    .compileComponents();
+      imports: [AppModule],
+      declarations: [CadastrarFilmeComponent, FooterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CadastrarFilmeComponent);
     component = fixture.componentInstance;

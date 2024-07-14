@@ -5,29 +5,26 @@ import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.scss']
+  styleUrls: ['./favorites.component.scss'],
 })
-export class FavoritesComponent implements OnInit{
+export class FavoritesComponent implements OnInit {
+  favoriteMovies!: IMovies[];
 
-  favoritesMovies!:IMovies[]
-
-
-  constructor(private service: SharedService){}
-
+  constructor(private service: SharedService) {}
 
   ngOnInit(): void {
-    this.getFavorites()
+    this.getFavorites();
   }
 
-
-  deleteFavorite(id:string){
-    this.service.deleteFavorite(id).subscribe(()=>{
-      this.getFavorites()
-    })
+  deleteFavorite(id: string) {
+    this.service.deleteFavorite(id).subscribe(() => {
+      this.getFavorites();
+    });
   }
 
-  getFavorites(){
-    this.service.getFavorites().subscribe((res:IMovies[]) => this.favoritesMovies = res)
+  getFavorites() {
+    this.service
+      .getFavorites()
+      .subscribe((res: IMovies[]) => (this.favoriteMovies = res));
   }
-
 }

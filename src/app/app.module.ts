@@ -8,8 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MovieComponent } from './components/movie/movie.component';
-import { ModalConfirmationComponent } from './components/movie/modal-confirmation/modal-confirmation.component';
+
+import { MovieComponent } from './components/movie/components/movie/movie.component';
+import { ModalConfirmationComponent } from './components/movie/components/modal-confirmation/modal-confirmation.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, MovieComponent, ModalConfirmationComponent],

@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
-import { FormularioComponent } from '../formulario/formulario.component';
+
 import { map } from 'rxjs';
 import { IMovies } from 'src/app/interfaces/interface';
-import { ModalConfirmationComponent } from './modal-confirmation/modal-confirmation.component';
+import { ModalConfirmationComponent } from '../modal-confirmation/modal-confirmation.component';
+import { FormularioComponent } from 'src/app/components/formulario/formulario.component';
+
 
 @Component({
   selector: 'app-movie',

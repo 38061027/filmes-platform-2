@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CadastrarFilmeComponent } from './cadastrar-filme.component';
-import { FooterComponent } from '../footer/footer.component';
+
 import { AppModule } from 'src/app/app.module';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 describe('CadastrarFilmeComponent', () => {
   let component: CadastrarFilmeComponent;

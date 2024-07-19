@@ -63,16 +63,6 @@
       "genero": "Romance"
     },
     {
-      "id": "13",
-      "titulo": "Gente Grande",
-      "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
-      "dtLancamento": "2010-06-09T03:00:00.000Z",
-      "descricao": "Após a morte do treinador de basquete, cinco amigos e excompanheiros se reúnem para o feriado do 4 de Julho.",
-      "nota": 6,
-      "urlIMDb": "https://www.imdb.com/title/tt1375670/?ref_=nv_sr_srsg_5_tt_6_nm_2_q_gente%2520",
-      "genero": "Comédia"
-    },
-    {
       "id": "7",
       "titulo": "Capitã Marvel",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -81,6 +71,16 @@
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
       "genero": "Ação"
+    },
+    {
+      "id": "13",
+      "titulo": "Gente Grande",
+      "urlFoto": "https://m.media-amazon.com/images/S/pv-target-images/28ba30adb15abcf10253d4c9e07575a206dfd89e48c37714b5f8603ce1575bf9.jpg",
+      "dtLancamento": "2010-06-09T03:00:00.000Z",
+      "descricao": "Após a morte do treinador de basquete, cinco amigos e excompanheiros se reúnem para o feriado do 4 de Julho.",
+      "nota": 6,
+      "urlIMDb": "https://www.imdb.com/title/tt1375670/?ref_=nv_sr_srsg_5_tt_6_nm_2_q_gente%2520",
+      "genero": "Comédia"
     }
   ]
 }

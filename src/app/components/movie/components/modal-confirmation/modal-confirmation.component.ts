@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { MovieComponent } from '../movie.component';
+
 
 @Component({
   selector: 'app-modal-confirmation',

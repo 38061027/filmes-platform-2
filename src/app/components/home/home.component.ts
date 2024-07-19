@@ -87,14 +87,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         const favoriteId = buttonElement.getAttribute('data-id');
         if (this.favoriteIds.includes(favoriteId)) {
           this.renderer.setStyle(buttonElement, 'color', 'red');
-          if (this.favoriteIds.includes(favoriteId)) {
-            this.renderer.setStyle(buttonElement, 'color', 'red');
-          } else {
-            this.renderer.setStyle(buttonElement, 'color', 'white');
-          }
-        } else {
-          this.renderer.setStyle(buttonElement, 'color', 'white');
+          return;
         }
+        this.renderer.setStyle(buttonElement, 'color', 'white');
       });
     }
   }
@@ -148,20 +143,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.counter++;
         });
       } else {
+        clickedButton.innerHTML = 'heart_broken';
+        clickedButton.classList.add('scale-effect');
         this.service.deleteFavorite(favorite.id).subscribe(() => {
           this.msgNotification.nativeElement.innerText = `Você removeu o filme ${favorite.titulo} dos favoritos!!`;
           this.ckeck.nativeElement.innerText = 'close';
           this.renderer.setStyle(this.ckeck.nativeElement, 'color', 'red');
-          if (clickedButton) {
-            clickedButton.classList.add('scale-effect');
-            setTimeout(() => {
-              clickedButton.classList.remove('scale-effect');
-            }, 500);
-            clickedButton.innerHTML = 'heart_broken';
-            setTimeout(() => {
-              clickedButton.innerHTML = 'favorite';
-            }, 2000);
-          }
+
+          setTimeout(() => {
+            clickedButton.classList.remove('scale-effect');
+            clickedButton.innerHTML = 'favorite';
+          }, 1000);
           this.favoriteIds = this.favoriteIds.filter(
             (id) => id !== favorite.id
           );

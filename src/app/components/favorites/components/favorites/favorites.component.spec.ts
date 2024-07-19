@@ -5,10 +5,10 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { FooterComponent } from '../footer/footer.component';
 import { SharedService } from 'src/app/services/shared.service';
 import { of } from 'rxjs';
 import { IMovies } from 'src/app/interfaces/interface';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;
